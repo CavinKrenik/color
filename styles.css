@@ -289,10 +289,10 @@ body {
 
 /* Card Front */
 .color-swatch-ring {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  border: 3px solid;
+  border: 2px solid;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -313,10 +313,10 @@ body {
 }
 
 .color-swatch {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.06);
 }
 
 .color-name {

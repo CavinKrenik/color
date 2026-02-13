@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,11 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
 
   <!--
@@ -126,7 +130,8 @@
 :-::+++*+-:::::::::::::-*:::::.:.:--:.:--::*##*****#######%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%#%%%###*+-:.::.:.               ..:  **::.........::-=++
 ---=*#%#+=-::-::::-::::-*:-::::::-==-:::---=%@+*****####%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%#+#%%%###*+=:::::::-..               :=++::....... ::-:-+++
 -===##%#*+=-----:----:::%---:::::-+==-:.-++=#@#++*#######%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%*+*%%%%%##**=---:...:-....              :=:.:.......:::-=-+=+-->
-  <!-- ===== LANDING PAGE ===== -->
+
+  <!-- LANDING PAGE -->
   <section id="landing" class="page active">
     <div class="video-bg">
       <video autoplay muted loop playsinline>
@@ -143,7 +148,9 @@
       <p class="landing-intro">A journey through three shades of green from grounded stability to vibrant growth.</p>
       <button class="cta-btn" onclick="navigateTo('stability')">
         <span>Explore the Forest</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
       </button>
     </div>
     <nav class="bottom-nav">
@@ -154,14 +161,18 @@
     </nav>
   </section>
 
-  <!-- ===== STABILITY PAGE ===== -->
+  <!-- STABILITY PAGE -->
   <section id="stability" class="page color-page" data-theme="dark">
     <div class="page-bg" style="background-image: url('assets/DeepforestGRNBKG.png')"></div>
-    <div class="page-bg-overlay" style="background: linear-gradient(180deg, rgba(14,85,10,0.25) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.4) 100%)"></div>
+    <div class="page-bg-overlay"
+      style="background: linear-gradient(180deg, rgba(14,85,10,0.25) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.4) 100%)">
+    </div>
 
     <header class="page-header">
       <button class="back-btn" onclick="navigateTo('landing')" aria-label="Back to home">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
       </button>
       <h2 class="page-title">Stability</h2>
       <div class="page-number">01</div>
@@ -178,7 +189,9 @@
             <h3 class="color-name">Dark Forest Green</h3>
             <span class="color-hex">#0E550A</span>
             <div class="flip-hint">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
               <span>Tap to explore</span>
             </div>
           </div>
@@ -191,9 +204,12 @@
               <li>Deep connection to nature</li>
               <li>Wealth, authority, tradition</li>
             </ul>
-            <p class="back-desc" style="color: #0E550A">Dark greens feel heavier and more anchored &mdash; like an old forest that has endured over time.</p>
+            <p class="back-desc" style="color: #0E550A">This deep shade feels safe and permanent. It slows us down,
+              offering a quiet place to rest and a sense of protection from the outside world.</p>
             <div class="flip-hint" style="color: #0E550A">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
               <span>Tap to return</span>
             </div>
           </div>
@@ -215,18 +231,24 @@
 
     <button class="next-page-btn" onclick="navigateTo('harmony')">
       <span>Harmony</span>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
     </button>
   </section>
 
-  <!-- ===== HARMONY PAGE ===== -->
+  <!-- HARMONY PAGE-->
   <section id="harmony" class="page color-page" data-theme="mid">
     <div class="page-bg" style="background-image: url('assets/mossgrnBKG.png')"></div>
-    <div class="page-bg-overlay" style="background: linear-gradient(180deg, rgba(73,100,21,0.2) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.35) 100%)"></div>
+    <div class="page-bg-overlay"
+      style="background: linear-gradient(180deg, rgba(73,100,21,0.2) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.35) 100%)">
+    </div>
 
     <header class="page-header">
       <button class="back-btn" onclick="navigateTo('stability')" aria-label="Back to Stability">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
       </button>
       <h2 class="page-title">Harmony</h2>
       <div class="page-number">02</div>
@@ -243,7 +265,9 @@
             <h3 class="color-name">Moss Green</h3>
             <span class="color-hex">#496415</span>
             <div class="flip-hint">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
               <span>Tap to explore</span>
             </div>
           </div>
@@ -256,9 +280,12 @@
               <li>Calming, peaceful atmosphere</li>
               <li>Connection to nature</li>
             </ul>
-            <p class="back-desc" style="color: #496415">Mid-greens evoke forest floors and natural ecosystems &mdash; symbolizing interconnectedness and quiet balance.</p>
+            <p class="back-desc" style="color: #496415">Sitting right in the middle of the spectrum, this is the
+              easiest color for our eyes to see. It feels balanced and natural, helping us relax without trying.</p>
             <div class="flip-hint" style="color: #496415">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
               <span>Tap to return</span>
             </div>
           </div>
@@ -280,18 +307,24 @@
 
     <button class="next-page-btn" onclick="navigateTo('growth')">
       <span>Growth</span>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
     </button>
   </section>
 
-  <!-- ===== GROWTH PAGE ===== -->
+  <!-- GROWTH PAGE -->
   <section id="growth" class="page color-page" data-theme="light">
     <div class="page-bg" style="background-image: url('assets/SPRINGGRNBKG.png')"></div>
-    <div class="page-bg-overlay" style="background: linear-gradient(180deg, rgba(178,216,36,0.15) 0%, rgba(0,0,0,0.05) 50%, rgba(0,0,0,0.3) 100%)"></div>
+    <div class="page-bg-overlay"
+      style="background: linear-gradient(180deg, rgba(178,216,36,0.15) 0%, rgba(0,0,0,0.05) 50%, rgba(0,0,0,0.3) 100%)">
+    </div>
 
     <header class="page-header">
       <button class="back-btn" onclick="navigateTo('harmony')" aria-label="Back to Harmony">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
       </button>
       <h2 class="page-title">Growth</h2>
       <div class="page-number">03</div>
@@ -308,7 +341,9 @@
             <h3 class="color-name" style="color: #1a3a00">Fresh Spring Green</h3>
             <span class="color-hex" style="color: #1a3a00">#B2D824</span>
             <div class="flip-hint" style="color: #1a3a00">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
               <span>Tap to explore</span>
             </div>
           </div>
@@ -321,9 +356,12 @@
               <li>Optimism and hope</li>
               <li>New beginnings</li>
             </ul>
-            <p class="back-desc" style="color: #4a6b00">Lighter greens feel lifted and expansive &mdash; strongly tied to spring, plant life, and forward movement.</p>
+            <p class="back-desc" style="color: #4a6b00">Bright and full of energy, this shade wakes us up. It feels like
+              the first days of spring, making us feel optimistic and ready for something new.</p>
             <div class="flip-hint" style="color: #4a6b00">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
               <span>Tap to return</span>
             </div>
           </div>
@@ -345,11 +383,13 @@
 
     <button class="next-page-btn" onclick="navigateTo('landing')" style="opacity:0.7">
       <span>Back to Start</span>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
     </button>
   </section>
 
-  <!-- ===== COLOR WHEEL OVERLAY ===== -->
+  <!-- COLOR WHEEL OVERLAY -->
   <div id="color-wheel-overlay" class="overlay hidden">
     <div class="overlay-content">
       <button class="overlay-close" onclick="toggleOverlay()">&times;</button>
@@ -357,11 +397,13 @@
       <div class="wheel-visual">
         <div class="wheel-ring">
           <div class="wheel-segment" style="--seg-color: #FFD700; --seg-angle: 60deg" data-label="Yellow"></div>
-          <div class="wheel-segment active-seg" style="--seg-color: #228B22; --seg-angle: 120deg" data-label="Green"></div>
+          <div class="wheel-segment active-seg" style="--seg-color: #228B22; --seg-angle: 120deg" data-label="Green">
+          </div>
           <div class="wheel-segment" style="--seg-color: #4169E1; --seg-angle: 240deg" data-label="Blue"></div>
         </div>
       </div>
-      <p class="wheel-desc">Green sits at <strong>120&deg;</strong> on the color wheel, directly between warm and cool zones. It inherits the <em>calm stability of blue</em> and the <em>vitality of yellow</em>.</p>
+      <p class="wheel-desc">Green sits at <strong>120&deg;</strong> on the color wheel, directly between warm and cool
+        zones. It inherits the <em>calm stability of blue</em> and the <em>vitality of yellow</em>.</p>
       <div class="mix-demo">
         <div class="mix-swatch" style="background: #4169E1"></div>
         <span class="mix-plus">+</span>
@@ -374,6 +416,7 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
 <!--
                                                                                          

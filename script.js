@@ -1,4 +1,4 @@
-// ===== PAGE NAVIGATION =====
+//PAGE NAV
 const pages = ['landing', 'stability', 'harmony', 'growth'];
 let currentPage = 'landing';
 let isTransitioning = false;
@@ -30,14 +30,14 @@ function navigateTo(pageId) {
   });
 }
 
-// ===== NAV DOTS =====
+//NAV DOTS
 function updateNavDots() {
   document.querySelectorAll('.nav-dot').forEach(dot => {
     dot.classList.toggle('active', dot.dataset.page === currentPage);
   });
 }
 
-// Click handlers for nav dots
+//nav dots click handler
 document.addEventListener('click', (e) => {
   const dot = e.target.closest('.nav-dot');
   if (dot && dot.dataset.page) {
@@ -45,7 +45,7 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// ===== PROGRESS BAR =====
+//PROGRESS BAR
 function createProgressBar() {
   const track = document.createElement('div');
   track.className = 'progress-track';
@@ -67,7 +67,7 @@ function updateProgress() {
 createProgressBar();
 updateProgress();
 
-// ===== KEYBOARD NAVIGATION =====
+//KEYBOARD NAVIGATION
 document.addEventListener('keydown', (e) => {
   const idx = pages.indexOf(currentPage);
 
@@ -88,7 +88,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// ===== TOUCH SWIPE =====
+//TOUCH SWIPE
 let touchStartX = 0;
 let touchStartY = 0;
 let touchEndX = 0;
@@ -124,7 +124,7 @@ function handleSwipe() {
   }
 }
 
-// ===== MOUSE WHEEL NAVIGATION =====
+//MOUSE WHEEL NAVIGATION
 let wheelTimeout = null;
 document.addEventListener('wheel', (e) => {
   if (wheelTimeout) return;
@@ -142,23 +142,22 @@ document.addEventListener('wheel', (e) => {
   }, 800);
 }, { passive: true });
 
-// ===== OVERLAY =====
+//OVERLAY
 function toggleOverlay() {
   const overlay = document.getElementById('color-wheel-overlay');
   overlay.classList.toggle('hidden');
 }
 
-// ===== CARD FLIP SOUND/HAPTIC FEEDBACK =====
+//CARD FLIP SOUND
 document.querySelectorAll('.flip-card').forEach(card => {
   card.addEventListener('click', () => {
-    // Subtle haptic feedback on mobile
     if (navigator.vibrate) {
       navigator.vibrate(10);
     }
   });
 });
 
-// ===== PARALLAX ON DESKTOP (background only) =====
+// PARALLAX
 if (window.matchMedia('(min-width: 768px)').matches) {
   document.addEventListener('mousemove', (e) => {
     const x = (e.clientX / window.innerWidth - 0.5) * 2;
@@ -176,19 +175,19 @@ if (window.matchMedia('(min-width: 768px)').matches) {
   });
 }
 
-// ===== INTERSECTION OBSERVER FOR VIDEO =====
+// FOR VIDEO 
 const video = document.querySelector('.video-bg video');
 if (video) {
   // Pause video when not on landing page
   const observer = new MutationObserver(() => {
     if (currentPage === 'landing') {
-      video.play().catch(() => {});
+      video.play().catch(() => { });
     } else {
       video.pause();
     }
   });
 
-  // Watch for page changes
+  //page changes
   const landing = document.getElementById('landing');
   observer.observe(landing, { attributes: true, attributeFilter: ['class'] });
 }

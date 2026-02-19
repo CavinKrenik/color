@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harmony — A Forest of Greens</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <section class="page color-page" data-theme="mid" data-page-index="3">
+    <div class="page-bg harmony-bg" style="background-image: url('assets/mossgrnBKG.png')"></div>
+    <div class="page-bg-overlay"
+      style="background: linear-gradient(180deg, rgba(73,100,21,0.2) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.45) 100%)">
+    </div>
+
+    <header class="page-header">
+      <a href="explore.html" class="back-btn" aria-label="Back to explore">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+      </a>
+      <h2 class="page-title">Harmony</h2>
+    </header>
+
+    <div class="color-overview-layout">
+
+      <div class="color-selector-list">
+
+        <button class="color-selector cs-active" data-hex="#496415" data-r="73" data-g="100" data-b="21"
+          data-name="Moss Green" data-psych="Composed Calm" data-traits="Balanced|Restorative|Peaceful"
+          data-desc="The measured calm of moss on stone. Neither urgent nor passive, simply present and composed.">
+          <div class="cs-swatch" style="background:#496415"></div>
+          <div class="cs-body">
+            <span class="cs-role">Primary</span>
+            <span class="cs-name">Moss Green</span>
+            <span class="cs-hex">#496415</span>
+          </div>
+        </button>
+
+        <button class="color-selector" data-hex="#6B8E23" data-r="107" data-g="142" data-b="35" data-name="Sage Canopy"
+          data-psych="Organic Ease" data-traits="Natural|Organic|Calm"
+          data-desc="The canopy in its most natural state. Unhurried, organic, and effortlessly harmonious.">
+          <div class="cs-swatch" style="background:#6B8E23"></div>
+          <div class="cs-body">
+            <span class="cs-role">Secondary</span>
+            <span class="cs-name">Sage Canopy</span>
+            <span class="cs-hex">#6B8E23</span>
+          </div>
+        </button>
+
+        <button class="color-selector" data-hex="#4F7942" data-r="79" data-g="121" data-b="66" data-name="Fern Frond"
+          data-psych="Gentle Resilience" data-traits="Flexible|Resilient|Soft"
+          data-desc="The soft curve of a fern frond. It bends without breaking, representing gentle resilience and balance.">
+          <div class="cs-swatch" style="background:#4F7942"></div>
+          <div class="cs-body">
+            <span class="cs-role">Midtone</span>
+            <span class="cs-name">Fern Frond</span>
+            <span class="cs-hex">#4F7942</span>
+          </div>
+        </button>
+
+        <button class="color-selector" data-hex="#8F9779" data-r="143" data-g="151" data-b="121" data-name="Lichen Bed"
+          data-psych="Quiet Compatibility" data-traits="Symbiotic|Neutral|Resting"
+          data-desc="The muted grey-green of lichen. It lives in perfect symbiosis, bringing a soft, resting neutral to the palette.">
+          <div class="cs-swatch" style="background:#8F9779"></div>
+          <div class="cs-body">
+            <span class="cs-role">Accent</span>
+            <span class="cs-name">Lichen Bed</span>
+            <span class="cs-hex">#8F9779</span>
+          </div>
+        </button>
+
+      </div>
+
+      <div class="dynamic-card-wrapper">
+        <div class="flip-card harmony-breathe" id="dynamic-card" role="button" tabindex="0"
+          aria-label="Flip card to explore">
+          <div class="flip-card-inner">
+
+            <div class="flip-card-front" id="dynamic-front" style="background:#000;">
+              <div class="color-swatch-ring harmony-glow" id="dynamic-ring" style="border-color: rgba(73,100,21,0.45)">
+                <div class="color-swatch" id="dynamic-swatch" style="background:#496415"></div>
+              </div>
+              <h3 class="color-name" id="dynamic-name">Moss Green</h3>
+              <span class="color-hex" id="dynamic-hex">#496415</span>
+              <div class="flip-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 16V4m0 0L3 8m4-4l4 4M17 8v12m0 0l4-4m-4 4l-4-4" />
+                </svg>
+                <span>Tap to explore</span>
+              </div>
+            </div>
+
+            <div class="flip-card-back" id="dynamic-back">
+              <h3 class="back-title" id="dynamic-back-title">Composed Calm</h3>
+              <ul class="trait-list" id="dynamic-traits">
+                <li>Balanced</li>
+                <li>Restorative</li>
+                <li>Peaceful</li>
+              </ul>
+              <p class="back-desc" id="dynamic-desc">The measured calm of moss on stone. Neither urgent nor passive,
+                simply present and composed.</p>
+              <p class="flip-hint" id="dynamic-back-hint">Tap to return</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <nav class="bottom-nav">
+      <a href="index.html" class="nav-dot" aria-label="Home"></a>
+      <a href="stability.html" class="nav-dot" aria-label="Stability"></a>
+      <a href="harmony.html" class="nav-dot active" aria-label="Harmony"></a>
+      <a href="growth.html" class="nav-dot" aria-label="Growth"></a>
+    </nav>
+
+    <a href="growth.html" class="next-page-btn">
+      <span>Growth</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
+    </a>
+  </section>
+
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true">
+    <button class="nav-close" id="nav-close" aria-label="Close menu">&times;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-divider"></li>
+      <li><a href="stability.html">Stability</a></li>
+      <li><a href="harmony.html" class="active-nav">Harmony</a></li>
+      <li><a href="growth.html">Growth</a></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

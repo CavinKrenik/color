@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Growth — A Forest of Greens</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <section class="page color-page" data-theme="light" data-page-index="4">
+    <div class="page-bg growth-bg" style="background-image: url('assets/SPRINGGRNBKG.png')"></div>
+    <div class="page-bg-overlay"
+      style="background: linear-gradient(180deg, rgba(178,216,36,0.2) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.45) 100%)">
+    </div>
+
+    <header class="page-header">
+      <a href="explore.html" class="back-btn" aria-label="Back to explore">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+      </a>
+      <h2 class="page-title">Growth</h2>
+    </header>
+
+    <div class="color-overview-layout">
+
+      <div class="color-selector-list">
+
+        <button class="color-selector cs-active" data-hex="#B2D824" data-r="178" data-g="216" data-b="36"
+          data-name="Fresh Spring Green" data-psych="Vital Expansion" data-traits="Vital|Expanding|Optimistic"
+          data-desc="The electric charge of new leaves in spring. Vibrant, reaching, and full of forward momentum.">
+          <div class="cs-swatch" style="background:#B2D824"></div>
+          <div class="cs-body">
+            <span class="cs-role">Primary</span>
+            <span class="cs-name">Fresh Spring Green</span>
+            <span class="cs-hex">#B2D824</span>
+          </div>
+        </button>
+
+        <button class="color-selector" data-hex="#D1E231" data-r="209" data-g="226" data-b="49" data-name="Sunlit Shoot"
+          data-psych="Pure Optimism" data-traits="Bright|Joyful|Unfolding"
+          data-desc="A young shoot catching its first full beam of sunlight. Pure optimism and potential energy.">
+          <div class="cs-swatch" style="background:#D1E231"></div>
+          <div class="cs-body">
+            <span class="cs-role">Secondary</span>
+            <span class="cs-name">Sunlit Shoot</span>
+            <span class="cs-hex">#D1E231</span>
+          </div>
+        </button>
+
+        <button class="color-selector" data-hex="#9CD84C" data-r="156" data-g="216" data-b="76" data-name="New Leaf"
+          data-psych="Active Growth" data-traits="Active|Generative|Fresh"
+          data-desc="The color of a leaf fully unfurled but still soft and new. Active photosynthesis in action.">
+          <div class="cs-swatch" style="background:#9CD84C"></div>
+          <div class="cs-body">
+            <span class="cs-role">Midtone</span>
+            <span class="cs-name">New Leaf</span>
+            <span class="cs-hex">#9CD84C</span>
+          </div>
+        </button>
+
+        <button class="color-selector" data-hex="#4A5D23" data-r="74" data-g="93" data-b="35"
+          data-name="Deep Sapling Stem" data-psych="Structural Support" data-traits="Strong|Supporting|Organic"
+          data-desc="The darker, growing stalk that supports new life. A deep, organic green that grounds the vibrant energy above.">
+          <div class="cs-swatch" style="background:#4A5D23"></div>
+          <div class="cs-body">
+            <span class="cs-role">Accent</span>
+            <span class="cs-name">Deep Sapling Stem</span>
+            <span class="cs-hex">#4A5D23</span>
+          </div>
+        </button>
+
+      </div>
+
+      <div class="dynamic-card-wrapper">
+        <div class="flip-card growth-scale" id="dynamic-card" role="button" tabindex="0"
+          aria-label="Flip card to explore">
+          <div class="flip-card-inner">
+
+            <div class="flip-card-front" id="dynamic-front" style="background:#000;">
+              <div class="color-swatch-ring growth-glow" id="dynamic-ring" style="border-color: rgba(178,216,36,0.45)">
+                <div class="color-swatch" id="dynamic-swatch" style="background:#B2D824"></div>
+              </div>
+              <h3 class="color-name" id="dynamic-name">Fresh Spring Green</h3>
+              <span class="color-hex" id="dynamic-hex">#B2D824</span>
+              <div class="flip-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 16V4m0 0L3 8m4-4l4 4M17 8v12m0 0l4-4m-4 4l-4-4" />
+                </svg>
+                <span>Tap to explore</span>
+              </div>
+            </div>
+
+            <div class="flip-card-back" id="dynamic-back">
+              <h3 class="back-title" id="dynamic-back-title">Vital Expansion</h3>
+              <ul class="trait-list" id="dynamic-traits">
+                <li>Vital</li>
+                <li>Expanding</li>
+                <li>Optimistic</li>
+              </ul>
+              <p class="back-desc" id="dynamic-desc">The electric charge of new leaves in spring. Vibrant, reaching, and
+                full of forward momentum.</p>
+              <p class="flip-hint" id="dynamic-back-hint">Tap to return</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <nav class="bottom-nav">
+      <a href="index.html" class="nav-dot" aria-label="Home"></a>
+      <a href="stability.html" class="nav-dot" aria-label="Stability"></a>
+      <a href="harmony.html" class="nav-dot" aria-label="Harmony"></a>
+      <a href="growth.html" class="nav-dot active" aria-label="Growth"></a>
+    </nav>
+
+    <a href="index.html" class="next-page-btn" style="opacity:0.7">
+      <span>Back to Start</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
+    </a>
+  </section>
+
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true">
+    <button class="nav-close" id="nav-close" aria-label="Close menu">&times;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-divider"></li>
+      <li><a href="stability.html">Stability</a></li>
+      <li><a href="harmony.html">Harmony</a></li>
+      <li><a href="growth.html" class="active-nav">Growth</a></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

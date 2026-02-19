@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore — A Forest of Greens</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <section class="page explore-page active" data-page-index="1">
+
+    <!-- header -->
+    <header class="explore-header">
+      <a href="index.html" class="back-btn" aria-label="Back to home" style="position:static">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+      </a>
+      <a href="index.html" class="explore-site-name">A Forest of Greens</a>
+      <div style="width:42px"></div>
+    </header>
+
+    <!-- cards -->
+    <div class="theme-cards-container">
+
+      <!-- stability -->
+      <a href="stability.html" class="theme-card-big">
+        <div class="theme-card-bg" style="background-image: url('assets/DeepforestGRNBKG.png')"></div>
+        <div class="theme-card-overlay"
+          style="background: linear-gradient(180deg, rgba(14,85,10,0.15) 0%, rgba(0,0,0,0.55) 100%)"></div>
+        <div class="theme-card-content">
+          <span class="theme-card-number">01</span>
+          <span class="theme-card-name">Stability</span>
+          <span class="theme-card-tagline">Grounded &bull; Rooted &bull; Enduring</span>
+          <div class="theme-card-chip">
+            <div class="theme-card-dot" style="background: #0E550A"></div>
+            #0E550A
+          </div>
+          <span class="theme-card-arrow">Explore &darr;</span>
+        </div>
+      </a>
+
+      <!-- harmony -->
+      <a href="harmony.html" class="theme-card-big">
+        <div class="theme-card-bg" style="background-image: url('assets/mossgrnBKG.png')"></div>
+        <div class="theme-card-overlay"
+          style="background: linear-gradient(180deg, rgba(73,100,21,0.15) 0%, rgba(0,0,0,0.55) 100%)"></div>
+        <div class="theme-card-content">
+          <span class="theme-card-number">02</span>
+          <span class="theme-card-name">Harmony</span>
+          <span class="theme-card-tagline">Balanced &bull; Restorative &bull; Peaceful</span>
+          <div class="theme-card-chip">
+            <div class="theme-card-dot" style="background: #496415"></div>
+            #496415
+          </div>
+          <span class="theme-card-arrow">Explore &darr;</span>
+        </div>
+      </a>
+
+      <!-- growth -->
+      <a href="growth.html" class="theme-card-big">
+        <div class="theme-card-bg" style="background-image: url('assets/SPRINGGRNBKG.png')"></div>
+        <div class="theme-card-overlay"
+          style="background: linear-gradient(180deg, rgba(178,216,36,0.1) 0%, rgba(0,0,0,0.5) 100%)"></div>
+        <div class="theme-card-content">
+          <span class="theme-card-number">03</span>
+          <span class="theme-card-name">Growth</span>
+          <span class="theme-card-tagline">Vital &bull; Expanding &bull; Optimistic</span>
+          <div class="theme-card-chip">
+            <div class="theme-card-dot" style="background: #B2D824"></div>
+            #B2D824
+          </div>
+          <span class="theme-card-arrow">Explore &darr;</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- nav -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true">
+    <button class="nav-close" id="nav-close" aria-label="Close menu">&times;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-divider"></li>
+      <li><a href="stability.html">Stability</a></li>
+      <li><a href="harmony.html">Harmony</a></li>
+      <li><a href="growth.html">Growth</a></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

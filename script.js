@@ -1,51 +1,61 @@
-//PAGE NAV
-const pages = ['landing', 'stability', 'harmony', 'growth'];
-let currentPage = 'landing';
-let isTransitioning = false;
+/* config */
+const pageUrls = [
+  'index.html',
+  'explore.html',
+  'stability.html',
+  'harmony.html',
+  'growth.html',
+];
 
-function navigateTo(pageId) {
-  if (isTransitioning || pageId === currentPage) return;
-  isTransitioning = true;
+const section = document.querySelector('.page');
+const pageIndex = section ? parseInt(section.dataset.pageIndex || '0', 10) : 0;
 
-  const current = document.getElementById(currentPage);
-  const next = document.getElementById(pageId);
-
-  // Reset any flipped cards on the page we're leaving
-  const flippedCards = current.querySelectorAll('.flip-card.flipped');
-  flippedCards.forEach(card => card.classList.remove('flipped'));
-
-  // Transition out
-  current.classList.remove('active');
-
-  // Transition in
-  requestAnimationFrame(() => {
-    next.classList.add('active');
-    currentPage = pageId;
-    updateNavDots();
-    updateProgress();
-
-    setTimeout(() => {
-      isTransitioning = false;
-    }, 600);
-  });
+function goToPage(index) {
+  if (index >= 0 && index < pageUrls.length) {
+    window.location.href = pageUrls[index];
+  }
 }
 
-//NAV DOTS
-function updateNavDots() {
-  document.querySelectorAll('.nav-dot').forEach(dot => {
-    dot.classList.toggle('active', dot.dataset.page === currentPage);
-  });
-}
-
-//nav dots click handler
-document.addEventListener('click', (e) => {
-  const dot = e.target.closest('.nav-dot');
-  if (dot && dot.dataset.page) {
-    navigateTo(dot.dataset.page);
+/* animation */
+document.addEventListener('DOMContentLoaded', () => {
+  const page = document.querySelector('.page');
+  if (page && !page.classList.contains('active')) {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        page.classList.add('active');
+      });
+    });
   }
 });
 
-//PROGRESS BAR
+/* menu */
+const hamburger = document.getElementById('hamburger');
+const navOverlay = document.getElementById('nav-overlay');
+const navClose = document.getElementById('nav-close');
+
+if (hamburger && navOverlay) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = navOverlay.classList.contains('open');
+    navOverlay.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', String(!isOpen));
+    navOverlay.setAttribute('aria-hidden', String(isOpen));
+  });
+
+  navClose?.addEventListener('click', () => {
+    navOverlay.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    navOverlay.setAttribute('aria-hidden', 'true');
+  });
+
+  navOverlay.addEventListener('click', (e) => {
+    if (e.target === navOverlay) {
+      navOverlay.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
+/* progress */
 function createProgressBar() {
   const track = document.createElement('div');
   track.className = 'progress-track';
@@ -54,45 +64,36 @@ function createProgressBar() {
   fill.id = 'progress-fill';
   track.appendChild(fill);
   document.body.appendChild(track);
-}
-
-function updateProgress() {
-  const fill = document.getElementById('progress-fill');
-  if (!fill) return;
-  const index = pages.indexOf(currentPage);
-  const pct = ((index + 1) / pages.length) * 100;
+  const pct = ((pageIndex + 1) / pageUrls.length) * 100;
   fill.style.width = pct + '%';
 }
 
 createProgressBar();
-updateProgress();
 
-//KEYBOARD NAVIGATION
+/* keyboard */
 document.addEventListener('keydown', (e) => {
-  const idx = pages.indexOf(currentPage);
+  if (navOverlay?.classList.contains('open')) {
+    if (e.key === 'Escape') {
+      navOverlay.classList.remove('open');
+      hamburger?.setAttribute('aria-expanded', 'false');
+    }
+    return;
+  }
 
   if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
     e.preventDefault();
-    if (idx < pages.length - 1) navigateTo(pages[idx + 1]);
+    if (pageIndex < pageUrls.length - 1) goToPage(pageIndex + 1);
   } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
     e.preventDefault();
-    if (idx > 0) navigateTo(pages[idx - 1]);
+    if (pageIndex > 0) goToPage(pageIndex - 1);
   } else if (e.key === 'Escape') {
-    // Close overlay or go home
-    const overlay = document.getElementById('color-wheel-overlay');
-    if (!overlay.classList.contains('hidden')) {
-      toggleOverlay();
-    } else if (currentPage !== 'landing') {
-      navigateTo('landing');
-    }
+    if (pageIndex !== 0) goToPage(0);
   }
 });
 
-//TOUCH SWIPE
+/* touch */
 let touchStartX = 0;
 let touchStartY = 0;
-let touchEndX = 0;
-let touchEndY = 0;
 
 document.addEventListener('touchstart', (e) => {
   touchStartX = e.changedTouches[0].screenX;
@@ -100,94 +101,80 @@ document.addEventListener('touchstart', (e) => {
 }, { passive: true });
 
 document.addEventListener('touchend', (e) => {
-  touchEndX = e.changedTouches[0].screenX;
-  touchEndY = e.changedTouches[0].screenY;
-  handleSwipe();
-}, { passive: true });
-
-function handleSwipe() {
-  const diffX = touchStartX - touchEndX;
-  const diffY = touchStartY - touchEndY;
+  if (navOverlay?.classList.contains('open')) return;
+  const diffX = touchStartX - e.changedTouches[0].screenX;
+  const diffY = touchStartY - e.changedTouches[0].screenY;
   const threshold = 60;
-
-  // Only trigger if horizontal swipe is dominant
   if (Math.abs(diffX) < threshold || Math.abs(diffX) < Math.abs(diffY)) return;
-
-  const idx = pages.indexOf(currentPage);
-
-  if (diffX > 0 && idx < pages.length - 1) {
-    // Swipe left -> next page
-    navigateTo(pages[idx + 1]);
-  } else if (diffX < 0 && idx > 0) {
-    // Swipe right -> prev page
-    navigateTo(pages[idx - 1]);
-  }
-}
-
-//MOUSE WHEEL NAVIGATION
-let wheelTimeout = null;
-document.addEventListener('wheel', (e) => {
-  if (wheelTimeout) return;
-
-  const idx = pages.indexOf(currentPage);
-
-  if (e.deltaY > 30 && idx < pages.length - 1) {
-    navigateTo(pages[idx + 1]);
-  } else if (e.deltaY < -30 && idx > 0) {
-    navigateTo(pages[idx - 1]);
-  }
-
-  wheelTimeout = setTimeout(() => {
-    wheelTimeout = null;
-  }, 800);
+  if (diffX > 0 && pageIndex < pageUrls.length - 1) goToPage(pageIndex + 1);
+  else if (diffX < 0 && pageIndex > 0) goToPage(pageIndex - 1);
 }, { passive: true });
 
-//OVERLAY
-function toggleOverlay() {
-  const overlay = document.getElementById('color-wheel-overlay');
-  overlay.classList.toggle('hidden');
-}
 
-//CARD FLIP SOUND
-document.querySelectorAll('.flip-card').forEach(card => {
-  card.addEventListener('click', () => {
-    if (navigator.vibrate) {
-      navigator.vibrate(10);
-    }
-  });
-});
-
-// PARALLAX
+/* parallax */
 if (window.matchMedia('(min-width: 768px)').matches) {
   document.addEventListener('mousemove', (e) => {
     const x = (e.clientX / window.innerWidth - 0.5) * 2;
     const y = (e.clientY / window.innerHeight - 0.5) * 2;
-
-    document.querySelectorAll('.page-bg').forEach(bg => {
+    document.querySelectorAll('.page-bg, .theme-card-bg').forEach(bg => {
       bg.style.transform = `scale(1.05) translate(${x * -8}px, ${y * -8}px)`;
     });
   });
 
   document.addEventListener('mouseleave', () => {
-    document.querySelectorAll('.page-bg').forEach(bg => {
+    document.querySelectorAll('.page-bg, .theme-card-bg').forEach(bg => {
       bg.style.transform = 'scale(1.05) translate(0, 0)';
     });
   });
 }
 
-// FOR VIDEO 
-const video = document.querySelector('.video-bg video');
-if (video) {
-  // Pause video when not on landing page
-  const observer = new MutationObserver(() => {
-    if (currentPage === 'landing') {
-      video.play().catch(() => { });
-    } else {
-      video.pause();
+/* cards */
+const dynamicCard = document.getElementById('dynamic-card');
+
+if (dynamicCard) {
+  dynamicCard.addEventListener('click', () => {
+    dynamicCard.classList.toggle('flipped');
+    if (navigator.vibrate) navigator.vibrate(10);
+  });
+  dynamicCard.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      dynamicCard.classList.toggle('flipped');
     }
   });
 
-  //page changes
-  const landing = document.getElementById('landing');
-  observer.observe(landing, { attributes: true, attributeFilter: ['class'] });
+  function selectColor(btn) {
+    const { hex, r, g, b, name, psych, traits, desc } = btn.dataset;
+
+    dynamicCard.classList.remove('flipped');
+    dynamicCard.style.opacity = '0';
+
+    setTimeout(() => {
+      /* front */
+      document.getElementById('dynamic-ring').style.borderColor = `rgba(${r},${g},${b},0.45)`;
+      document.getElementById('dynamic-swatch').style.background = hex;
+      document.getElementById('dynamic-name').textContent = name;
+      document.getElementById('dynamic-hex').textContent = hex;
+
+      /* back */
+      document.getElementById('dynamic-back-title').textContent = psych;
+      document.getElementById('dynamic-traits').innerHTML = traits.split('|').map(t => `<li>${t}</li>`).join('');
+      document.getElementById('dynamic-desc').textContent = desc;
+
+      document.querySelectorAll('.color-selector').forEach(s => s.classList.remove('cs-active'));
+      btn.classList.add('cs-active');
+
+      dynamicCard.style.opacity = '1';
+    }, 150);
+  }
+
+  document.querySelectorAll('.color-selector').forEach(btn => {
+    btn.addEventListener('click', () => selectColor(btn));
+  });
+}
+
+/* video */
+const video = document.querySelector('.video-bg video');
+if (video) {
+  video.play().catch(() => { });
 }

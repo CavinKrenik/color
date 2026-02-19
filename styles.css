@@ -689,10 +689,7 @@ a.nav-dot {
   }
 }
 
-/* harmony */
-.harmony-breathe.flipped {
-  animation: none !important;
-}
+
 
 /* glow */
 .harmony-glow {
@@ -715,11 +712,15 @@ a.nav-dot {
 }
 
 /* scale */
-.growth-scale {
+.growth-scale,
+.stability-pulse,
+.harmony-breathe {
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-.growth-scale:hover:not(.flipped) {
+.growth-scale:hover:not(.flipped),
+.stability-pulse:hover:not(.flipped),
+.harmony-breathe:hover:not(.flipped) {
   transform: scale(1.03) !important;
 }
 

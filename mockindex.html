@@ -162,10 +162,9 @@
 
     /* ---- Ad 3: Center Popup 1 ---- */
     #ad-popup-1 {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 370px;
+      top: 100px;
+      left: 185px;
+      width: 340px;
       background: #fff;
       border: 3px solid #0055cc;
       box-shadow: 0 12px 50px rgba(0, 0, 0, 0.6);
@@ -357,10 +356,9 @@
 
     /* ---- Ad 6: Congratulations Popup ---- */
     #ad-popup-2 {
-      top: 50%;
-      left: 50%;
-      transform: translate(-51%, -49%);
-      width: 420px;
+      top: 100px;
+      right: 220px;
+      width: 380px;
       background: linear-gradient(145deg, #0a003a, #350000);
       border: 4px solid #FFD700;
       box-shadow: 0 0 80px rgba(255, 215, 0, 0.35), 0 15px 50px rgba(0, 0, 0, 0.8);
@@ -490,10 +488,9 @@
 
     /* ---- Ad 8: Ad Blocker Warning ---- */
     #ad-popup-3 {
-      top: 50%;
-      left: 50%;
-      transform: translate(-49%, -51%);
-      width: 350px;
+      bottom: 90px;
+      right: 220px;
+      width: 320px;
       background: #fff;
       border: 2px solid #bb0000;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
@@ -571,35 +568,32 @@
       cursor: pointer;
     }
 
-    /* ---- Ad 9: Exit Intent Bottom Sheet ---- */
+    /* ---- Ad 9: Exit Intent Popup ---- */
     #ad-popup-4 {
-      bottom: 76px;
-      left: 0;
-      right: 0;
+      bottom: 90px;
+      left: 185px;
+      width: 320px;
       background: rgba(5, 5, 5, 0.97);
-      border-top: 3px solid #ff4400;
-      padding: 1rem 2rem;
+      border: 2px solid #ff4400;
+      border-radius: 4px;
+      padding: 1.1rem 1.1rem 1rem;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
+      flex-direction: column;
+      gap: 0.75rem;
       z-index: 601;
       color: #fff;
     }
 
-    #ad-popup-4 .p4-text { flex: 1; }
-
     #ad-popup-4 .p4-head {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 900;
       color: #ff4400;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      margin-bottom: 0.2rem;
     }
 
     #ad-popup-4 .p4-copy {
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       color: rgba(255, 255, 255, 0.65);
       line-height: 1.5;
     }
@@ -607,7 +601,6 @@
     #ad-popup-4 .p4-btns {
       display: flex;
       gap: 0.5rem;
-      flex-shrink: 0;
     }
 
     #ad-popup-4 .p4-no {
@@ -630,16 +623,6 @@
       border-radius: 2px;
       white-space: nowrap;
       cursor: pointer;
-    }
-
-    #ad-popup-4 .ad-x {
-      position: relative;
-      top: auto;
-      right: auto;
-      flex-shrink: 0;
-      color: rgba(255, 255, 255, 0.3);
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.1);
     }
 
     /* ---- Ad 10: Full Takeover ---- */
@@ -701,6 +684,308 @@
       color: rgba(255, 255, 255, 0.4);
       background: rgba(255, 255, 255, 0.07);
       border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    /* ---- Ad 11: Cookie Consent ---- */
+    #ad-cookie {
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      background: #fafaf7;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 0.9rem 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      z-index: 520;
+      color: #000;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    }
+
+    #ad-cookie .ck-text { flex: 1; font-size: 0.62rem; color: #444; line-height: 1.5; }
+    #ad-cookie .ck-text strong { color: #000; }
+    #ad-cookie .ck-btns { display: flex; flex-direction: column; gap: 0.35rem; flex-shrink: 0; }
+
+    #ad-cookie .ck-accept {
+      background: #2d6a2d;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 2px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    #ad-cookie .ck-manage {
+      background: transparent;
+      border: 1px solid #ccc;
+      color: #999;
+      font-size: 0.58rem;
+      padding: 0.3rem 0.5rem;
+      border-radius: 2px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    /* ---- Ad 12: Download App ---- */
+    #ad-app {
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      background: linear-gradient(135deg, #001a00, #003300);
+      border: 2px solid #44cc44;
+      border-radius: 10px;
+      padding: 1.1rem 1.1rem 1rem;
+      z-index: 650;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+
+    #ad-app .app-icon { font-size: 2.2rem; margin-bottom: 0.3rem; }
+
+    #ad-app .app-name {
+      font-size: 0.75rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #44cc44;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2rem;
+    }
+
+    #ad-app .app-copy {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+
+    #ad-app .app-stars { color: #FFD700; font-size: 0.72rem; margin-bottom: 0.6rem; }
+
+    #ad-app .app-cta {
+      background: #44cc44;
+      color: #000;
+      font-weight: 900;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      padding: 0.45rem 1.2rem;
+      border-radius: 20px;
+      display: inline-block;
+      cursor: pointer;
+      letter-spacing: 0.06em;
+    }
+
+    #ad-app .app-fine {
+      font-size: 0.45rem;
+      color: rgba(255,255,255,0.2);
+      margin-top: 0.6rem;
+      line-height: 1.4;
+    }
+
+    /* ---- Ad 13: Fake Video Ad ---- */
+    #ad-video {
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 360px;
+      background: #000;
+      border: 1px solid #333;
+      border-radius: 4px;
+      z-index: 620;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    }
+
+    #ad-video .vid-screen {
+      width: 100%;
+      height: 160px;
+      background: linear-gradient(135deg, #1a3300 0%, #0d1a00 50%, #2d1a00 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    #ad-video .vid-play {
+      width: 44px; height: 44px;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    #ad-video .vid-title {
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    #ad-video .vid-badge {
+      position: absolute;
+      top: 8px; left: 8px;
+      background: #ff0000;
+      color: #fff;
+      font-size: 0.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding: 0.15rem 0.4rem;
+      border-radius: 2px;
+      letter-spacing: 0.1em;
+    }
+
+    #ad-video .vid-timer {
+      position: absolute;
+      bottom: 8px; right: 8px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.6rem;
+      font-family: monospace;
+    }
+
+    #ad-video .vid-progress {
+      height: 3px;
+      background: #333;
+      position: relative;
+    }
+
+    #ad-video .vid-bar {
+      position: absolute;
+      top: 0; left: 0;
+      height: 100%;
+      background: #ff0000;
+      width: 0%;
+      animation: vidProgress 30s linear forwards;
+    }
+
+    #ad-video .vid-meta {
+      padding: 0.65rem 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    #ad-video .vid-info { flex: 1; }
+
+    #ad-video .vid-show {
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: #ff6600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    #ad-video .vid-ep {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.75);
+      margin-top: 0.1rem;
+    }
+
+    #ad-video .vid-skip {
+      font-size: 0.55rem;
+      color: rgba(255,255,255,0.3);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 0.3rem 0.65rem;
+      border-radius: 2px;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ---- Ad 14: Live Chat Widget ---- */
+    #ad-chat {
+      bottom: 90px;
+      right: 220px;
+      width: 270px;
+      background: #1a1a2e;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      z-index: 630;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      color: #fff;
+    }
+
+    #ad-chat .ch-header {
+      background: #2d6a2d;
+      padding: 0.65rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    #ad-chat .ch-avatar {
+      width: 28px; height: 28px;
+      background: #44aa44;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    #ad-chat .ch-agent { flex: 1; }
+
+    #ad-chat .ch-name {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    #ad-chat .ch-status {
+      font-size: 0.52rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    #ad-chat .ch-status::before {
+      content: '●';
+      color: #88ff44;
+      margin-right: 3px;
+      font-size: 0.45rem;
+    }
+
+    #ad-chat .ch-body { padding: 0.75rem 0.85rem; }
+
+    #ad-chat .ch-bubble {
+      background: rgba(255,255,255,0.07);
+      border-radius: 0 8px 8px 8px;
+      padding: 0.5rem 0.65rem;
+      font-size: 0.63rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.5;
+      margin-bottom: 0.6rem;
+    }
+
+    #ad-chat .ch-typing {
+      font-size: 0.55rem;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 0.65rem;
+      animation: adPulse 1.2s ease-in-out infinite;
+    }
+
+    #ad-chat .ch-input {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 0.45rem 0.65rem;
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.25);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @keyframes vidProgress {
+      from { width: 0%; }
+      to { width: 100%; }
     }
 
     /* =====================
@@ -888,9 +1173,7 @@
 
 <body>
 
-  <!-- ========================
-       REAL SITE CONTENT
-  ======================== -->
+  <!-- content -->
   <section id="landing" class="page active" data-page-index="0">
     <div class="video-bg">
       <video autoplay muted loop playsinline>
@@ -921,7 +1204,7 @@
     </nav>
   </section>
 
-  <!-- hamburger nav -->
+  <!-- nav -->
   <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -938,11 +1221,7 @@
   </div>
 
 
-  <!-- ========================
-       MOCK ADS
-  ======================== -->
-
-  <!-- Ad 1: Top Banner -->
+  <!-- ad1 -->
   <div class="mock-ad" id="ad-banner-top">
     <div>
       <div class="ad-headline">🪵 BIG TIMBER CO. — WE CLEAR-CUT 24/7. NO TREE TOO OLD. NO FOREST TOO SACRED. ☎ 1-800-LOG-FAST 🪵</div>
@@ -951,7 +1230,7 @@
     <div class="ad-x" onclick="noClose(this, event)">✕</div>
   </div>
 
-  <!-- Ad 2: Right Sidebar -->
+  <!-- ad2 -->
   <div class="mock-ad" id="ad-sidebar-right">
     <div class="ad-x" onclick="noClose(this, event)"
       style="color:#fff; background:rgba(0,0,0,0.25); border-color:rgba(255,255,255,0.25);">✕</div>
@@ -966,7 +1245,7 @@
     <div class="sr-fine">*Newsletter printed and mailed physically. No digital option available. We insist.</div>
   </div>
 
-  <!-- Ad 3: Center Popup 1 -->
+  <!-- ad3 -->
   <div class="mock-ad" id="ad-popup-1">
     <div class="p1-bar">
       <span>Sponsored · Suburban Sprawl Developers LLC</span>
@@ -983,7 +1262,7 @@
     </div>
   </div>
 
-  <!-- Ad 4: Bottom Banner -->
+  <!-- ad4 -->
   <div class="mock-ad" id="ad-banner-bottom">
     <div class="bb-text">
       <div class="bb-headline">Disposable Plastics Corp — Why go green when you can go plastic?</div>
@@ -994,7 +1273,7 @@
       style="position:relative;top:auto;right:auto;">✕</div>
   </div>
 
-  <!-- Ad 5: Left Sidebar -->
+  <!-- ad5 -->
   <div class="mock-ad" id="ad-sidebar-left">
     <div class="ad-x" onclick="noClose(this, event)"
       style="color:#ff4400; background:rgba(0,0,0,0.5); border-color:#ff4400;">✕</div>
@@ -1006,7 +1285,7 @@
     <div class="sl-fine">Environmental impact reports available for an additional fee. Biodiversity loss not covered. This ad was approved by people who have never visited a forest.</div>
   </div>
 
-  <!-- Ad 6: Congratulations Popup -->
+  <!-- ad6 -->
   <div class="mock-ad" id="ad-popup-2">
     <div class="p2-bar">
       <span>🏆 Important Message — Do Not Close 🏆</span>
@@ -1023,7 +1302,7 @@
     </div>
   </div>
 
-  <!-- Ad 7: Sponsor Ticker -->
+  <!-- ad7 -->
   <div class="mock-ad" id="ad-ticker">
     <div class="tk-label">Now Sponsored By</div>
     <div class="tk-track">
@@ -1037,7 +1316,7 @@
       <span class="tk-item">💊 Chemical Fertilizer Group</span>
       <span class="tk-item">🔥 Controlled Burn Associates</span>
       <span class="tk-item">🏗️ Old-Growth Condominiums Ltd.</span>
-      <!-- Duplicate for seamless scroll -->
+      <!-- duplicate -->
       <span class="tk-item">🪵 Clear-Cut Industries</span>
       <span class="tk-item">🏭 Paper Pulp Nation</span>
       <span class="tk-item">⛏️ Strip Mine Daily</span>
@@ -1051,7 +1330,7 @@
     </div>
   </div>
 
-  <!-- Ad 8: Ad Blocker Warning -->
+  <!-- ad8 -->
   <div class="mock-ad" id="ad-popup-3">
     <div class="p3-bar">
       <span>System Alert</span>
@@ -1069,7 +1348,7 @@
     </div>
   </div>
 
-  <!-- Ad 9: Exit Intent -->
+  <!-- ad9 -->
   <div class="mock-ad" id="ad-popup-4">
     <div class="p4-text">
       <div class="p4-head">Before you go...</div>
@@ -1080,10 +1359,10 @@
       <div class="p4-yes">Yes, sign me up</div>
     </div>
     <div class="ad-x" onclick="noClose(this, event)"
-      style="position:relative;top:auto;right:auto;color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);">✕</div>
+      style="color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);">✕</div>
   </div>
 
-  <!-- Ad 10: Full Takeover -->
+  <!-- ad10 -->
   <div class="mock-ad" id="ad-takeover">
     <div class="tk-big-icon">🏭</div>
     <div class="tk-company">Industry Inc.</div>
@@ -1093,9 +1372,72 @@
   </div>
 
 
-  <!-- ========================
-       CAN'T LEAVE POPUP
-  ======================== -->
+  <!-- ad11 -->
+  <div class="mock-ad" id="ad-cookie">
+    <div class="ck-text">
+      <strong>🍪 We EAT cookies.</strong> By continuing to use this site you consent to logging, tracking, cross-device profiling, the sale of your browsing data to timber industry partners, and the storage of 47 third-party analytics cookies. We also use acorns.
+    </div>
+    <div class="ck-btns">
+      <div class="ck-accept">Accept All</div>
+      <div class="ck-manage">Manage preferences</div>
+    </div>
+    <div class="ad-x" onclick="noClose(this, event)">✕</div>
+  </div>
+
+  <!-- ad12 -->
+  <div class="mock-ad" id="ad-app">
+    <div class="ad-x" onclick="noClose(this, event)"
+      style="color:rgba(255,255,255,0.4);background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.15);">✕</div>
+    <div class="app-icon">🪚</div>
+    <div class="app-name">LumberPro™ App</div>
+    <div class="app-copy">Get real-time timber prices, chainsaw ratings, and forest clearance permits — all in one convenient app. Now with GPS tree tracking.</div>
+    <div class="app-stars">★★★★★ <span style="font-size:0.55rem;color:rgba(255,255,255,0.4);">(48,291 reviews)</span></div>
+    <div class="app-cta">Free Download</div>
+    <div class="app-fine">Requires location access, contacts, camera, microphone, and full file system permissions. In-app purchases available. Subscription auto-renews.</div>
+  </div>
+
+  <!-- ad13 -->
+  <div class="mock-ad" id="ad-video">
+    <div class="ad-x" onclick="noClose(this, event)"
+      style="color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);">✕</div>
+    <div class="vid-screen">
+      <div class="vid-badge">Ad</div>
+      <div class="vid-play">▶</div>
+      <div class="vid-title">Logging Life · Season 4</div>
+      <div class="vid-timer">0:30</div>
+    </div>
+    <div class="vid-progress"><div class="vid-bar"></div></div>
+    <div class="vid-meta">
+      <div class="vid-info">
+        <div class="vid-show">Sponsored · TimberVision+</div>
+        <div class="vid-ep">"Episode 8: The Ancient Grove"</div>
+      </div>
+      <div class="vid-skip">Skip not available</div>
+    </div>
+  </div>
+
+  <!-- ad14 -->
+  <div class="mock-ad" id="ad-chat">
+    <div class="ad-x" onclick="noClose(this, event)"
+      style="color:rgba(255,255,255,0.4);background:rgba(0,0,0,0.3);border-color:rgba(255,255,255,0.1);">✕</div>
+    <div class="ch-header">
+      <div class="ch-avatar">🪵</div>
+      <div class="ch-agent">
+        <div class="ch-name">Brad — Lumber Specialist</div>
+        <div class="ch-status">Online now</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <div class="ch-bubble">Hi there! 👋 I noticed you're exploring colors. Have you considered the warm, natural tones of freshly cut timber? I can get you a quote!</div>
+      <div class="ch-typing">Brad is typing...</div>
+      <div class="ch-input">
+        <span>Reply to Brad...</span>
+        <span style="color:rgba(255,255,255,0.15);">➤</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal -->
   <div id="cant-leave">
     <div class="cant-leave-box">
       <div class="cant-leave-icon">🪵</div>
@@ -1110,9 +1452,7 @@
     </div>
   </div>
 
-  <!-- ========================
-       BLACKOUT + RETURN
-  ======================== -->
+  <!-- blackout -->
   <div id="blackout"></div>
 
   <div id="return-wrap">
@@ -1125,28 +1465,32 @@
     </a>
   </div>
 
-  <!-- Tooltip -->
+  <!-- tooltip -->
   <div id="no-close-tip">This ad cannot be closed.</div>
 
 
   <script>
-    /* Ad spawn schedule */
+    /* schedule */
     const adSchedule = [
+      { id: 'ad-cookie',        delay: 600   },
       { id: 'ad-banner-top',    delay: 1500  },
       { id: 'ad-sidebar-right', delay: 2800  },
-      { id: 'ad-popup-1',       delay: 3800  },
-      { id: 'ad-banner-bottom', delay: 4400  },
-      { id: 'ad-sidebar-left',  delay: 5000  },
-      { id: 'ad-popup-2',       delay: 5800  },
-      { id: 'ad-ticker',        delay: 6400  },
-      { id: 'ad-popup-3',       delay: 7000  },
-      { id: 'ad-popup-4',       delay: 7800  },
-      { id: 'ad-takeover',      delay: 8800  },
+      { id: 'ad-chat',          delay: 3400  },
+      { id: 'ad-popup-1',       delay: 4000  },
+      { id: 'ad-banner-bottom', delay: 4600  },
+      { id: 'ad-app',           delay: 5200  },
+      { id: 'ad-sidebar-left',  delay: 5800  },
+      { id: 'ad-popup-2',       delay: 6400  },
+      { id: 'ad-ticker',        delay: 7000  },
+      { id: 'ad-popup-3',       delay: 7600  },
+      { id: 'ad-video',         delay: 8200  },
+      { id: 'ad-popup-4',       delay: 8800  },
+      { id: 'ad-takeover',      delay: 10000 },
     ];
 
-    /* Track whether ads are done */
+    /* state */
     let adsComplete = false;
-    setTimeout(() => { adsComplete = true; }, 8800);
+    setTimeout(() => { adsComplete = true; }, 10500);
 
     adSchedule.forEach(({ id, delay }) => {
       setTimeout(() => {
@@ -1155,17 +1499,17 @@
       }, delay);
     });
 
-    /* Blackout at ~17s (8.8s last ad + 8s exploration time) */
+    /* blackout */
     setTimeout(() => {
       document.getElementById('blackout').classList.add('active');
     }, 16800);
 
-    /* Return button after blackout fades in */
+    /* return */
     setTimeout(() => {
       document.getElementById('return-wrap').classList.add('visible');
     }, 19200);
 
-    /* Non-closing X handler */
+    /* noclose */
     const tip = document.getElementById('no-close-tip');
     let tipTimer;
 
@@ -1178,12 +1522,12 @@
       tipTimer = setTimeout(() => tip.classList.remove('show'), 1800);
     }
 
-    /* Can't-leave popup */
+    /* modal */
     function dismissCantLeave() {
       document.getElementById('cant-leave').classList.remove('show');
     }
 
-    /* Intercept CTA + nav links before ads finish */
+    /* intercept */
     document.getElementById('cta-explore')?.addEventListener('click', (e) => {
       if (!adsComplete) {
         e.preventDefault();
@@ -1191,7 +1535,7 @@
       }
     });
 
-    /* Incrementing tree counter */
+    /* counter */
     let treeCount = 4812;
     const counterEl = document.getElementById('tree-counter');
     setInterval(() => {
@@ -1199,7 +1543,7 @@
       if (counterEl) counterEl.textContent = treeCount.toLocaleString();
     }, 180);
 
-    /* Prize countdown timer */
+    /* timer */
     let prizeSeconds = 299;
     const timerEl = document.getElementById('prize-timer');
     setInterval(() => {

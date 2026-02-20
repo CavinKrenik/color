@@ -1054,6 +1054,15 @@ a.nav-dot {
   margin: 0.6rem 0;
 }
 
+/* about */
+.about-page {
+  overflow-y: auto;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 72px;
+  padding-bottom: 60px;
+}
+
 /* explore */
 .explore-page {
   flex-direction: column;

@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Forest of Greens</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    /* =====================
+       MOCK AD ENGINE
+    ===================== */
+
+    .mock-ad {
+      position: fixed;
+      z-index: 500;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+      font-family: 'Arial', 'Helvetica', sans-serif;
+    }
+
+    .mock-ad.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .ad-x {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 20px;
+      height: 20px;
+      font-size: 0.75rem;
+      font-weight: 900;
+      line-height: 1;
+      color: rgba(0, 0, 0, 0.5);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      flex-shrink: 0;
+    }
+
+    /* ---- Ad 1: Top Banner ---- */
+    #ad-banner-top {
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 68px;
+      background: #FFD700;
+      border-bottom: 3px solid #cc0000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      z-index: 510;
+    }
+
+    #ad-banner-top .ad-headline {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #cc0000;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-align: center;
+      animation: adFlash 0.75s ease-in-out infinite;
+    }
+
+    #ad-banner-top .ad-sub {
+      font-size: 0.58rem;
+      color: #333;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 3px;
+    }
+
+    /* ---- Ad 2: Right Sidebar ---- */
+    #ad-sidebar-right {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 210px;
+      background: linear-gradient(160deg, #ff6a00, #c0006a);
+      padding: 1.25rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      text-align: center;
+      color: #fff;
+      border-left: 3px solid #8a0000;
+      z-index: 511;
+    }
+
+    #ad-sidebar-right .sr-logo { font-size: 2.8rem; }
+
+    #ad-sidebar-right .sr-name {
+      font-size: 0.82rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    #ad-sidebar-right .sr-tag {
+      font-size: 0.62rem;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+
+    #ad-sidebar-right .sr-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.25);
+      margin: 0.25rem 0;
+    }
+
+    #ad-sidebar-right .sr-counter-label {
+      font-size: 0.55rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.75;
+    }
+
+    #ad-sidebar-right .sr-count {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #FFD700;
+      font-family: monospace;
+      letter-spacing: 0.05em;
+    }
+
+    #ad-sidebar-right .sr-cta {
+      background: #fff;
+      color: #c0006a;
+      font-weight: 900;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+      border-radius: 2px;
+      letter-spacing: 0.04em;
+      margin-top: 0.4rem;
+      cursor: pointer;
+    }
+
+    #ad-sidebar-right .sr-fine {
+      font-size: 0.44rem;
+      opacity: 0.45;
+      line-height: 1.4;
+    }
+
+    /* ---- Ad 3: Center Popup 1 ---- */
+    #ad-popup-1 {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 370px;
+      background: #fff;
+      border: 3px solid #0055cc;
+      box-shadow: 0 12px 50px rgba(0, 0, 0, 0.6);
+      z-index: 600;
+      color: #000;
+    }
+
+    #ad-popup-1 .p1-bar {
+      background: #0055cc;
+      color: #fff;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #ad-popup-1 .p1-bar .ad-x {
+      position: relative;
+      top: auto;
+      right: auto;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.3);
+      flex-shrink: 0;
+    }
+
+    #ad-popup-1 .p1-body {
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    #ad-popup-1 .p1-icon { font-size: 2.5rem; margin-bottom: 0.3rem; }
+
+    #ad-popup-1 .p1-name {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #0055cc;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    #ad-popup-1 .p1-copy {
+      font-size: 0.73rem;
+      color: #444;
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+
+    #ad-popup-1 .p1-review {
+      font-size: 0.65rem;
+      color: #777;
+      margin-bottom: 0.75rem;
+      font-style: italic;
+    }
+
+    #ad-popup-1 .p1-cta {
+      background: #ff6600;
+      color: #fff;
+      font-weight: 900;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      padding: 0.55rem 1.4rem;
+      border-radius: 3px;
+      display: inline-block;
+      cursor: pointer;
+      animation: adFlash 1.1s ease-in-out infinite;
+    }
+
+    #ad-popup-1 .p1-legal {
+      font-size: 0.42rem;
+      color: #bbb;
+      margin-top: 0.75rem;
+      line-height: 1.4;
+    }
+
+    /* ---- Ad 4: Bottom Banner ---- */
+    #ad-banner-bottom {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 76px;
+      background: linear-gradient(90deg, #00b800, #88ff00);
+      border-top: 3px solid #006600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem 0 1.25rem;
+      gap: 1rem;
+      z-index: 512;
+    }
+
+    #ad-banner-bottom .bb-text { flex: 1; }
+
+    #ad-banner-bottom .bb-headline {
+      font-size: 0.95rem;
+      font-weight: 900;
+      color: #001a00;
+      text-transform: uppercase;
+    }
+
+    #ad-banner-bottom .bb-sub {
+      font-size: 0.57rem;
+      color: #003300;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    #ad-banner-bottom .bb-cta {
+      background: #003300;
+      color: #88ff00;
+      font-weight: 900;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      padding: 0.5rem 1.2rem;
+      border-radius: 2px;
+      white-space: nowrap;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    #ad-banner-bottom .ad-x {
+      position: relative;
+      top: auto;
+      right: auto;
+      flex-shrink: 0;
+    }
+
+    /* ---- Ad 5: Left Sidebar ---- */
+    #ad-sidebar-left {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 175px;
+      background: #111;
+      padding: 1.25rem 0.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      text-align: center;
+      color: #fff;
+      border-right: 3px solid #ff4400;
+      z-index: 511;
+    }
+
+    #ad-sidebar-left .sl-icon { font-size: 2.8rem; }
+
+    #ad-sidebar-left .sl-name {
+      font-size: 0.72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #ff4400;
+      letter-spacing: 0.08em;
+    }
+
+    #ad-sidebar-left .sl-stars {
+      color: #FFD700;
+      font-size: 0.7rem;
+    }
+
+    #ad-sidebar-left .sl-tag {
+      font-size: 0.58rem;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.55;
+    }
+
+    #ad-sidebar-left .sl-cta {
+      background: #ff4400;
+      color: #fff;
+      font-weight: 900;
+      font-size: 0.64rem;
+      text-transform: uppercase;
+      padding: 0.4rem 0.75rem;
+      border-radius: 2px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    #ad-sidebar-left .sl-fine {
+      font-size: 0.44rem;
+      color: rgba(255, 255, 255, 0.25);
+      line-height: 1.4;
+    }
+
+    /* ---- Ad 6: Congratulations Popup ---- */
+    #ad-popup-2 {
+      top: 50%;
+      left: 50%;
+      transform: translate(-51%, -49%);
+      width: 420px;
+      background: linear-gradient(145deg, #0a003a, #350000);
+      border: 4px solid #FFD700;
+      box-shadow: 0 0 80px rgba(255, 215, 0, 0.35), 0 15px 50px rgba(0, 0, 0, 0.8);
+      z-index: 700;
+      color: #fff;
+    }
+
+    #ad-popup-2 .p2-bar {
+      background: #FFD700;
+      color: #000;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.62rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: adFlash 0.55s ease-in-out infinite;
+    }
+
+    #ad-popup-2 .p2-bar .ad-x {
+      position: relative;
+      top: auto;
+      right: auto;
+      background: rgba(0, 0, 0, 0.2);
+      color: #000;
+      border-color: rgba(0, 0, 0, 0.3);
+      flex-shrink: 0;
+    }
+
+    #ad-popup-2 .p2-body {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    #ad-popup-2 .p2-trophy { font-size: 3.5rem; margin-bottom: 0.4rem; }
+
+    #ad-popup-2 .p2-winner {
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: #FFD700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+      margin-bottom: 0.3rem;
+    }
+
+    #ad-popup-2 .p2-prize {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.5;
+      margin-bottom: 0.4rem;
+    }
+
+    #ad-popup-2 .p2-timer {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #ff4444;
+      font-family: monospace;
+      margin: 0.5rem 0 1rem;
+      animation: adFlash 1s ease-in-out infinite;
+    }
+
+    #ad-popup-2 .p2-cta {
+      background: #FFD700;
+      color: #000;
+      font-weight: 900;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      padding: 0.7rem 2rem;
+      border-radius: 3px;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    #ad-popup-2 .p2-fine {
+      font-size: 0.44rem;
+      color: rgba(255, 255, 255, 0.28);
+      margin-top: 0.85rem;
+      line-height: 1.4;
+    }
+
+    /* ---- Ad 7: Sponsor Ticker ---- */
+    #ad-ticker {
+      top: 68px;
+      left: 0;
+      right: 0;
+      height: 26px;
+      background: #000;
+      border-bottom: 1px solid #ff4400;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      z-index: 513;
+    }
+
+    #ad-ticker .tk-label {
+      background: #ff4400;
+      color: #000;
+      padding: 0 0.8rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      font-size: 0.58rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    #ad-ticker .tk-track {
+      display: flex;
+      animation: tickerScroll 14s linear infinite;
+      white-space: nowrap;
+    }
+
+    #ad-ticker .tk-item {
+      color: #ff4400;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0 2.5rem;
+    }
+
+    /* ---- Ad 8: Ad Blocker Warning ---- */
+    #ad-popup-3 {
+      top: 50%;
+      left: 50%;
+      transform: translate(-49%, -51%);
+      width: 350px;
+      background: #fff;
+      border: 2px solid #bb0000;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      z-index: 800;
+      color: #000;
+    }
+
+    #ad-popup-3 .p3-bar {
+      background: #bb0000;
+      color: #fff;
+      padding: 0.45rem 0.8rem;
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #ad-popup-3 .p3-bar .ad-x {
+      position: relative;
+      top: auto;
+      right: auto;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.3);
+      flex-shrink: 0;
+    }
+
+    #ad-popup-3 .p3-body {
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    #ad-popup-3 .p3-icon { font-size: 2.8rem; margin-bottom: 0.4rem; }
+
+    #ad-popup-3 .p3-title {
+      font-size: 1rem;
+      font-weight: 900;
+      color: #bb0000;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    #ad-popup-3 .p3-text {
+      font-size: 0.72rem;
+      color: #444;
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+
+    #ad-popup-3 .p3-btns {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    #ad-popup-3 .btn-primary {
+      background: #bb0000;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.68rem;
+      padding: 0.4rem 1rem;
+      border-radius: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    #ad-popup-3 .btn-secondary {
+      background: #eee;
+      color: #aaa;
+      font-size: 0.64rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    /* ---- Ad 9: Exit Intent Bottom Sheet ---- */
+    #ad-popup-4 {
+      bottom: 76px;
+      left: 0;
+      right: 0;
+      background: rgba(5, 5, 5, 0.97);
+      border-top: 3px solid #ff4400;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      z-index: 601;
+      color: #fff;
+    }
+
+    #ad-popup-4 .p4-text { flex: 1; }
+
+    #ad-popup-4 .p4-head {
+      font-size: 0.8rem;
+      font-weight: 900;
+      color: #ff4400;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.2rem;
+    }
+
+    #ad-popup-4 .p4-copy {
+      font-size: 0.68rem;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.5;
+    }
+
+    #ad-popup-4 .p4-btns {
+      display: flex;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    #ad-popup-4 .p4-no {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 0.6rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 2px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    #ad-popup-4 .p4-yes {
+      background: #ff4400;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.65rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 2px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    #ad-popup-4 .ad-x {
+      position: relative;
+      top: auto;
+      right: auto;
+      flex-shrink: 0;
+      color: rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* ---- Ad 10: Full Takeover ---- */
+    #ad-takeover {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      background: #0a0a0a;
+      border: 2px solid #ff4400;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.8rem 1.4rem 1.4rem;
+      z-index: 900;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 0 40px rgba(255,68,0,0.4);
+    }
+
+    #ad-takeover .tk-big-icon {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      animation: adPulse 0.9s ease-in-out infinite;
+    }
+
+    #ad-takeover .tk-company {
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #ff4400;
+      letter-spacing: 0.1em;
+    }
+
+    #ad-takeover .tk-tag {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
+    #ad-takeover .tk-sponsors {
+      font-size: 0.5rem;
+      color: rgba(255, 255, 255, 0.2);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-top: 1rem;
+    }
+
+    #ad-takeover .ad-x {
+      top: 0.5rem;
+      right: 0.5rem;
+      width: 22px;
+      height: 22px;
+      font-size: 0.75rem;
+      border-radius: 50%;
+      color: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    /* =====================
+       KEYFRAMES
+    ===================== */
+    @keyframes adFlash {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.45; }
+    }
+
+    @keyframes adPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    @keyframes tickerScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* =====================
+       BLACKOUT + RETURN
+    ===================== */
+    #blackout {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      z-index: 9000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 2.5s ease;
+    }
+
+    #blackout.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    #return-wrap {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 2s ease;
+      gap: 1.5rem;
+    }
+
+    #return-wrap.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    #return-wrap .return-label {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    #return-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: rgba(255, 255, 255, 0.85);
+      padding: 1.1rem 2.8rem;
+      border-radius: 50px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: all 0.4s ease;
+    }
+
+    #return-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* =====================
+       TOOLTIP FOR DEAD X
+    ===================== */
+    #no-close-tip {
+      position: fixed;
+      background: rgba(10, 10, 10, 0.9);
+      color: rgba(255, 255, 255, 0.8);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      padding: 0.3rem 0.65rem;
+      border-radius: 3px;
+      pointer-events: none;
+      z-index: 99999;
+      opacity: 0;
+      transition: opacity 0.15s ease;
+      white-space: nowrap;
+    }
+
+    #no-close-tip.show { opacity: 1; }
+
+    /* =====================
+       CAN'T LEAVE POPUP
+    ===================== */
+    #cant-leave {
+      position: fixed;
+      inset: 0;
+      z-index: 99990;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    #cant-leave.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cant-leave-box {
+      background: #111;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 2.2rem 2.4rem;
+      max-width: 380px;
+      width: 90%;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      position: relative;
+    }
+
+    .cant-leave-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .cant-leave-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 0.6rem;
+    }
+
+    .cant-leave-body {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.6;
+      margin-bottom: 1.4rem;
+    }
+
+    .cant-leave-ok {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.6);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.55rem 1.6rem;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+
+    .cant-leave-fine {
+      font-size: 0.58rem;
+      color: rgba(255, 255, 255, 0.18);
+      margin-top: 0.9rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========================
+       REAL SITE CONTENT
+  ======================== -->
+  <section id="landing" class="page active" data-page-index="0">
+    <div class="video-bg">
+      <video autoplay muted loop playsinline>
+        <source src="assets/gree.mp4" type="video/mp4">
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+
+    <div class="landing-content">
+      <h1 class="site-title">A Forest of Greens</h1>
+      <div class="hero-card">
+        <span class="hero-subtitle">THE COLOR OF GROWTH</span>
+        <p class="landing-intro">A journey through shades of green from grounded stability to vibrant growth.</p>
+        <a href="explore.html" class="cta-btn" id="cta-explore">
+          <span>Explore the Forest</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <nav class="bottom-nav">
+      <a href="index.html" class="nav-dot active" aria-label="Home"></a>
+      <a href="stability.html" class="nav-dot" aria-label="Stability"></a>
+      <a href="harmony.html" class="nav-dot" aria-label="Harmony"></a>
+      <a href="growth.html" class="nav-dot" aria-label="Growth"></a>
+    </nav>
+  </section>
+
+  <!-- hamburger nav -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true">
+    <button class="nav-close" id="nav-close" aria-label="Close menu">&times;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-divider"></li>
+      <li><a href="stability.html">Stability</a></li>
+      <li><a href="harmony.html">Harmony</a></li>
+      <li><a href="growth.html">Growth</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+
+
+  <!-- ========================
+       MOCK ADS
+  ======================== -->
+
+  <!-- Ad 1: Top Banner -->
+  <div class="mock-ad" id="ad-banner-top">
+    <div>
+      <div class="ad-headline">🪵 BIG TIMBER CO. — WE CLEAR-CUT 24/7. NO TREE TOO OLD. NO FOREST TOO SACRED. ☎ 1-800-LOG-FAST 🪵</div>
+      <div class="ad-sub">America's #1 Old-Growth Destroyer · Free Estimates · Same-Day Clearing · Results Permanent</div>
+    </div>
+    <div class="ad-x" onclick="noClose(this, event)">✕</div>
+  </div>
+
+  <!-- Ad 2: Right Sidebar -->
+  <div class="mock-ad" id="ad-sidebar-right">
+    <div class="ad-x" onclick="noClose(this, event)"
+      style="color:#fff; background:rgba(0,0,0,0.25); border-color:rgba(255,255,255,0.25);">✕</div>
+    <div class="sr-logo">🏭</div>
+    <div class="sr-name">Paper Mills Unlimited</div>
+    <div class="sr-tag">Turning ancient trees into<br>your junk mail since 1887.</div>
+    <div class="sr-divider"></div>
+    <div class="sr-counter-label">Trees harvested today</div>
+    <div class="sr-count" id="tree-counter">0</div>
+    <div class="sr-tag" style="margin-top:0.25rem;">Subscribe to our newsletter.<br>Printed on 100% virgin timber.</div>
+    <div class="sr-cta">Subscribe Now</div>
+    <div class="sr-fine">*Newsletter printed and mailed physically. No digital option available. We insist.</div>
+  </div>
+
+  <!-- Ad 3: Center Popup 1 -->
+  <div class="mock-ad" id="ad-popup-1">
+    <div class="p1-bar">
+      <span>Sponsored · Suburban Sprawl Developers LLC</span>
+      <div class="ad-x" onclick="noClose(this, event)"
+        style="position:relative;top:auto;right:auto;width:16px;height:16px;font-size:0.65rem;color:#fff;background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.3);">✕</div>
+    </div>
+    <div class="p1-body">
+      <div class="p1-icon">🏘️</div>
+      <div class="p1-name">Suburban Sprawl Developers</div>
+      <div class="p1-copy">Nature? <strong>We paved it.</strong> Beautiful 4-bedroom homes from $800k — built this spring on the land where that old forest used to be. Quiet neighborhood. No wildlife.</div>
+      <div class="p1-review">⭐⭐⭐⭐⭐ "They cleared our woods in a weekend. Very thorough." — K. Smith, New Homeowner</div>
+      <div class="p1-cta">Claim Your Lot Now</div>
+      <div class="p1-legal">*Development may displace 12–40 known wildlife species. Contractor not liable for ecological loss. Some forests cleared were confirmed habitats. Results permanent. By clicking above you agree to receive 47 emails per week. Carbon footprint sold separately. Trees not included.</div>
+    </div>
+  </div>
+
+  <!-- Ad 4: Bottom Banner -->
+  <div class="mock-ad" id="ad-banner-bottom">
+    <div class="bb-text">
+      <div class="bb-headline">Disposable Plastics Corp — Why go green when you can go plastic?</div>
+      <div class="bb-sub">Free shipping on orders over 10,000 units · New: Forest-Fresh Scented Single-Use Packaging · Guilt not included</div>
+    </div>
+    <div class="bb-cta">Order Now</div>
+    <div class="ad-x" onclick="noClose(this, event)"
+      style="position:relative;top:auto;right:auto;">✕</div>
+  </div>
+
+  <!-- Ad 5: Left Sidebar -->
+  <div class="mock-ad" id="ad-sidebar-left">
+    <div class="ad-x" onclick="noClose(this, event)"
+      style="color:#ff4400; background:rgba(0,0,0,0.5); border-color:#ff4400;">✕</div>
+    <div class="sl-icon">🪓</div>
+    <div class="sl-name">Industrial Logging Inc.</div>
+    <div class="sl-stars">⭐⭐⭐⭐⭐</div>
+    <div class="sl-tag">Ancient forests cleared<br>in 48 hours. Guaranteed.<br><br>Rated #1 by Developers Quarterly, two years running.</div>
+    <div class="sl-cta">Get a Free Quote</div>
+    <div class="sl-fine">Environmental impact reports available for an additional fee. Biodiversity loss not covered. This ad was approved by people who have never visited a forest.</div>
+  </div>
+
+  <!-- Ad 6: Congratulations Popup -->
+  <div class="mock-ad" id="ad-popup-2">
+    <div class="p2-bar">
+      <span>🏆 Important Message — Do Not Close 🏆</span>
+      <div class="ad-x" onclick="noClose(this, event)"
+        style="position:relative;top:auto;right:auto;width:16px;height:16px;font-size:0.65rem;background:rgba(0,0,0,0.2);color:#000;border-color:rgba(0,0,0,0.3);">✕</div>
+    </div>
+    <div class="p2-body">
+      <div class="p2-trophy">🏆</div>
+      <div class="p2-winner">Congratulations!</div>
+      <div class="p2-prize">You have been selected to receive<br><strong style="font-size:1.05rem; color:#FFD700;">500 FREE Disposable Cups</strong><br>Made from REAL Old-Growth Timber. Offer expires in:</div>
+      <div class="p2-timer" id="prize-timer">04:59</div>
+      <div class="p2-cta">Claim My Free Cups</div>
+      <div class="p2-fine">By claiming cups you consent to the ongoing logging of 0.003 acres of old-growth forest on your behalf per order. Trees cleared. Cups shipped. Nature wept. Offer valid while forests last.</div>
+    </div>
+  </div>
+
+  <!-- Ad 7: Sponsor Ticker -->
+  <div class="mock-ad" id="ad-ticker">
+    <div class="tk-label">Now Sponsored By</div>
+    <div class="tk-track">
+      <span class="tk-item">🪵 Clear-Cut Industries</span>
+      <span class="tk-item">🏭 Paper Pulp Nation</span>
+      <span class="tk-item">⛏️ Strip Mine Daily</span>
+      <span class="tk-item">🚛 Petroleum Plastics Co.</span>
+      <span class="tk-item">🏠 Suburban Sprawl LLC</span>
+      <span class="tk-item">🗑️ Disposable Everything Inc.</span>
+      <span class="tk-item">🪓 Big Timber Quarterly</span>
+      <span class="tk-item">💊 Chemical Fertilizer Group</span>
+      <span class="tk-item">🔥 Controlled Burn Associates</span>
+      <span class="tk-item">🏗️ Old-Growth Condominiums Ltd.</span>
+      <!-- Duplicate for seamless scroll -->
+      <span class="tk-item">🪵 Clear-Cut Industries</span>
+      <span class="tk-item">🏭 Paper Pulp Nation</span>
+      <span class="tk-item">⛏️ Strip Mine Daily</span>
+      <span class="tk-item">🚛 Petroleum Plastics Co.</span>
+      <span class="tk-item">🏠 Suburban Sprawl LLC</span>
+      <span class="tk-item">🗑️ Disposable Everything Inc.</span>
+      <span class="tk-item">🪓 Big Timber Quarterly</span>
+      <span class="tk-item">💊 Chemical Fertilizer Group</span>
+      <span class="tk-item">🔥 Controlled Burn Associates</span>
+      <span class="tk-item">🏗️ Old-Growth Condominiums Ltd.</span>
+    </div>
+  </div>
+
+  <!-- Ad 8: Ad Blocker Warning -->
+  <div class="mock-ad" id="ad-popup-3">
+    <div class="p3-bar">
+      <span>System Alert</span>
+      <div class="ad-x" onclick="noClose(this, event)"
+        style="position:relative;top:auto;right:auto;width:16px;height:16px;font-size:0.65rem;color:#fff;background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.3);">✕</div>
+    </div>
+    <div class="p3-body">
+      <div class="p3-icon">⛔</div>
+      <div class="p3-title">Ad Blocker Detected</div>
+      <div class="p3-text">This forest cannot continue loading without your full advertising engagement. Our partners in the timber, plastics, and sprawl industries depend on your undivided attention to sustain operations. Please disable your ad blocker to continue appreciating nature.</div>
+      <div class="p3-btns">
+        <div class="btn-primary">Disable Ad Blocker</div>
+        <div class="btn-secondary">I prefer deforestation (continue)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ad 9: Exit Intent -->
+  <div class="mock-ad" id="ad-popup-4">
+    <div class="p4-text">
+      <div class="p4-head">Before you go...</div>
+      <div class="p4-copy">Did you know? In the time you've spent on this page, 4,500 acres of forest were cleared for advertisers just like the ones you see here. Click to learn more about how your attention funds deforestation.</div>
+    </div>
+    <div class="p4-btns">
+      <div class="p4-no">No thanks</div>
+      <div class="p4-yes">Yes, sign me up</div>
+    </div>
+    <div class="ad-x" onclick="noClose(this, event)"
+      style="position:relative;top:auto;right:auto;color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);">✕</div>
+  </div>
+
+  <!-- Ad 10: Full Takeover -->
+  <div class="mock-ad" id="ad-takeover">
+    <div class="tk-big-icon">🏭</div>
+    <div class="tk-company">Industry Inc.</div>
+    <div class="tk-tag">We grow profits, not forests.™</div>
+    <div class="tk-sponsors">A proud sponsor of everything you were trying to look at</div>
+    <div class="ad-x" onclick="noClose(this, event)">✕</div>
+  </div>
+
+
+  <!-- ========================
+       CAN'T LEAVE POPUP
+  ======================== -->
+  <div id="cant-leave">
+    <div class="cant-leave-box">
+      <div class="cant-leave-icon">🪵</div>
+      <div class="cant-leave-title">Please view our sponsors first.</div>
+      <div class="cant-leave-body">
+        Our advertising partners have kindly funded this experience.<br>
+        You may leave after they finish presenting their offers.<br><br>
+        <em>Thank you for your patience and continued loyalty to the free market.</em>
+      </div>
+      <button class="cant-leave-ok" onclick="dismissCantLeave()">I understand</button>
+      <div class="cant-leave-fine">By closing this dialog you agree to view all remaining advertisements in full. Skipping is not available in your region. Ad experience is non-transferable. Results may vary. See terms.</div>
+    </div>
+  </div>
+
+  <!-- ========================
+       BLACKOUT + RETURN
+  ======================== -->
+  <div id="blackout"></div>
+
+  <div id="return-wrap">
+    <div class="return-label">The forest is still there</div>
+    <a href="index.html" id="return-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M19 12H5M12 19l-7-7 7-7" />
+      </svg>
+      Return to the Forest
+    </a>
+  </div>
+
+  <!-- Tooltip -->
+  <div id="no-close-tip">This ad cannot be closed.</div>
+
+
+  <script>
+    /* Ad spawn schedule */
+    const adSchedule = [
+      { id: 'ad-banner-top',    delay: 1500  },
+      { id: 'ad-sidebar-right', delay: 2800  },
+      { id: 'ad-popup-1',       delay: 3800  },
+      { id: 'ad-banner-bottom', delay: 4400  },
+      { id: 'ad-sidebar-left',  delay: 5000  },
+      { id: 'ad-popup-2',       delay: 5800  },
+      { id: 'ad-ticker',        delay: 6400  },
+      { id: 'ad-popup-3',       delay: 7000  },
+      { id: 'ad-popup-4',       delay: 7800  },
+      { id: 'ad-takeover',      delay: 8800  },
+    ];
+
+    /* Track whether ads are done */
+    let adsComplete = false;
+    setTimeout(() => { adsComplete = true; }, 8800);
+
+    adSchedule.forEach(({ id, delay }) => {
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('visible');
+      }, delay);
+    });
+
+    /* Blackout at ~17s (8.8s last ad + 8s exploration time) */
+    setTimeout(() => {
+      document.getElementById('blackout').classList.add('active');
+    }, 16800);
+
+    /* Return button after blackout fades in */
+    setTimeout(() => {
+      document.getElementById('return-wrap').classList.add('visible');
+    }, 19200);
+
+    /* Non-closing X handler */
+    const tip = document.getElementById('no-close-tip');
+    let tipTimer;
+
+    function noClose(el, e) {
+      e.stopPropagation();
+      tip.style.left = (e.clientX + 12) + 'px';
+      tip.style.top  = (e.clientY + 12) + 'px';
+      tip.classList.add('show');
+      clearTimeout(tipTimer);
+      tipTimer = setTimeout(() => tip.classList.remove('show'), 1800);
+    }
+
+    /* Can't-leave popup */
+    function dismissCantLeave() {
+      document.getElementById('cant-leave').classList.remove('show');
+    }
+
+    /* Intercept CTA + nav links before ads finish */
+    document.getElementById('cta-explore')?.addEventListener('click', (e) => {
+      if (!adsComplete) {
+        e.preventDefault();
+        document.getElementById('cant-leave').classList.add('show');
+      }
+    });
+
+    /* Incrementing tree counter */
+    let treeCount = 4812;
+    const counterEl = document.getElementById('tree-counter');
+    setInterval(() => {
+      treeCount += Math.floor(Math.random() * 9) + 2;
+      if (counterEl) counterEl.textContent = treeCount.toLocaleString();
+    }, 180);
+
+    /* Prize countdown timer */
+    let prizeSeconds = 299;
+    const timerEl = document.getElementById('prize-timer');
+    setInterval(() => {
+      if (prizeSeconds > 0) prizeSeconds--;
+      const m = Math.floor(prizeSeconds / 60);
+      const s = prizeSeconds % 60;
+      if (timerEl) timerEl.textContent =
+        String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+    }, 1000);
+  </script>
+
+</body>
+</html>

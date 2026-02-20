@@ -264,6 +264,7 @@ body {
   aspect-ratio: 3 / 4;
   cursor: pointer;
   outline: none;
+  position: relative;
 }
 
 .flip-card-inner {

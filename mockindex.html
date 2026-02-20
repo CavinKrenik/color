@@ -1045,11 +1045,13 @@
 
     #return-wrap .return-label {
       font-family: 'Playfair Display', serif;
-      font-size: 0.75rem;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
       font-weight: 400;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.25);
+      letter-spacing: -0.01em;
+      color: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
     }
 
     #return-btn {

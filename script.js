@@ -5,6 +5,7 @@ const pageUrls = [
   'stability.html',
   'harmony.html',
   'growth.html',
+  'about.html',
 ];
 
 const section = document.querySelector('.page');

@@ -262,6 +262,7 @@ body {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   transition: transform var(--card-flip);
+  will-change: transform;
 }
 
 .flip-card.flipped .flip-card-inner {
@@ -302,19 +303,20 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
+  transform-origin: center;
+  will-change: transform;
+  -webkit-animation: swatchPulse 3s ease-in-out infinite;
   animation: swatchPulse 3s ease-in-out infinite;
 }
 
+@-webkit-keyframes swatchPulse {
+  0%, 100% { -webkit-transform: scale(1); transform: scale(1); }
+  50%       { -webkit-transform: scale(1.05); transform: scale(1.05); }
+}
+
 @keyframes swatchPulse {
-
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.05);
-  }
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.05); }
 }
 
 .color-swatch {
@@ -349,19 +351,18 @@ body {
   opacity: 0.5;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  -webkit-animation: hintPulse 2s ease-in-out infinite;
   animation: hintPulse 2s ease-in-out infinite;
 }
 
+@-webkit-keyframes hintPulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 0.8; }
+}
+
 @keyframes hintPulse {
-
-  0%,
-  100% {
-    opacity: 0.5;
-  }
-
-  50% {
-    opacity: 0.8;
-  }
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 0.8; }
 }
 
 /* back */
@@ -1200,6 +1201,18 @@ a.nav-dot {
   *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+
+  /* functional — keep the flip visible */
+  .flip-card-inner {
+    transition-duration: 0.7s !important;
+  }
+
+  /* decorative — stop cleanly instead of strobing at 0.01ms */
+  .color-swatch-ring,
+  .flip-hint {
+    -webkit-animation: none !important;
+    animation: none !important;
   }
 }
 

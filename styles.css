@@ -170,6 +170,7 @@ body {
   background-size: cover;
   background-position: center;
   z-index: 0;
+  will-change: transform;
 }
 
 .page-bg-overlay {
@@ -1130,6 +1131,7 @@ a.nav-dot {
   background-size: cover;
   background-position: center;
   transition: transform 0.6s ease;
+  will-change: transform;
 }
 
 .theme-card-big:hover .theme-card-bg {
@@ -1220,9 +1222,22 @@ a.nav-dot {
 
   /* decorative — stop cleanly instead of strobing at 0.01ms */
   .color-swatch-ring,
-  .flip-hint {
+  .flip-hint,
+  .stability-bg,
+  .harmony-bg {
     -webkit-animation: none !important;
     animation: none !important;
+  }
+
+  /* explore cards — disable layout-thrashing flex transition */
+  .theme-card-big {
+    transition: none !important;
+  }
+
+  .theme-card-bg,
+  .theme-card-overlay,
+  .theme-card-arrow {
+    transition: none !important;
   }
 }
 

@@ -1170,6 +1170,23 @@
       margin-top: 0.9rem;
       line-height: 1.5;
     }
+
+    /* ad animations are intentional — restore durations even for reduced-motion users */
+    @media (prefers-reduced-motion: reduce) {
+      .mock-ad                      { transition-duration: 0.35s !important; }
+      #ad-banner-top .ad-headline   { animation-duration: 1.5s !important; }
+      #ad-popup-1 .p1-cta           { animation-duration: 1.5s !important; }
+      #ad-popup-2 .p2-bar           { animation-duration: 1.2s !important; }
+      #ad-popup-2 .p2-timer         { animation-duration: 1.5s !important; }
+      #ad-takeover .tk-big-icon     { animation-duration: 1.5s !important; }
+      #ad-ticker .tk-track          { animation-duration: 14s !important; }
+      #ad-chat .ch-typing           { animation-duration: 1.5s !important; }
+      #ad-video .vid-bar            { animation-duration: 30s !important; }
+      #blackout                     { transition-duration: 2.5s !important; }
+      #return-wrap                  { transition-duration: 2s !important; }
+      #no-close-tip                 { transition-duration: 0.15s !important; }
+      #cant-leave                   { transition-duration: 0.25s !important; }
+    }
   </style>
 </head>
 

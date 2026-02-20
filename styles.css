@@ -298,6 +298,7 @@ body {
   justify-content: center;
   background: #111;
   color: #fff;
+  overflow: hidden;
 }
 
 /* front */

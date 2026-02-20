@@ -35,7 +35,8 @@
 
         <button class="color-selector cs-active" data-hex="#496415" data-r="73" data-g="100" data-b="21"
           data-name="Moss Green" data-psych="Composed Calm" data-traits="Balanced|Restorative|Peaceful"
-          data-desc="The measured calm of moss on stone. Neither urgent nor passive, simply present and composed.">
+          data-desc="The measured calm of moss on stone. Neither urgent nor passive, simply present and composed."
+          data-history="Moss pigments derived from lichen were used in medieval illuminated manuscripts. This balanced, muted hue was prized because scribes found it rested the reader's eye between dense columns of text — one of history's earliest recorded uses of color for wellbeing.">
           <div class="cs-swatch" style="background:#496415"></div>
           <div class="cs-body">
             <span class="cs-role">Primary</span>
@@ -46,7 +47,8 @@
 
         <button class="color-selector" data-hex="#6B8E23" data-r="107" data-g="142" data-b="35" data-name="Sage Canopy"
           data-psych="Organic Ease" data-traits="Natural|Organic|Calm"
-          data-desc="The canopy in its most natural state. Unhurried, organic, and effortlessly harmonious.">
+          data-desc="The canopy in its most natural state. Unhurried, organic, and effortlessly harmonious."
+          data-history="Olive and sage greens dominate Japanese Edo-period woodblock prints (1603–1867), where artists used the hue as a unifying 'mother color.' It bridged warm reds and cool blues in a composition — its harmonizing property recognized long before modern color theory named it.">
           <div class="cs-swatch" style="background:#6B8E23"></div>
           <div class="cs-body">
             <span class="cs-role">Secondary</span>
@@ -57,7 +59,8 @@
 
         <button class="color-selector" data-hex="#4F7942" data-r="79" data-g="121" data-b="66" data-name="Fern Frond"
           data-psych="Gentle Resilience" data-traits="Flexible|Resilient|Soft"
-          data-desc="The soft curve of a fern frond. It bends without breaking, representing gentle resilience and balance.">
+          data-desc="The soft curve of a fern frond. It bends without breaking, representing gentle resilience and balance."
+          data-history="In the early 20th century, art therapy researchers identified soft middle-greens as among the most universally calming colors across cultures. By the 1930s, hospitals across Europe were painting ward walls in similar tones to aid patient recovery — a practice that continues in care facilities today.">
           <div class="cs-swatch" style="background:#4F7942"></div>
           <div class="cs-body">
             <span class="cs-role">Midtone</span>
@@ -68,7 +71,8 @@
 
         <button class="color-selector" data-hex="#8F9779" data-r="143" data-g="151" data-b="121" data-name="Lichen Bed"
           data-psych="Quiet Compatibility" data-traits="Symbiotic|Neutral|Resting"
-          data-desc="The muted grey-green of lichen. It lives in perfect symbiosis, bringing a soft, resting neutral to the palette.">
+          data-desc="The muted grey-green of lichen. It lives in perfect symbiosis, bringing a soft, resting neutral to the palette."
+          data-history="Grey-greens like this were called 'celadon' in Chinese Song Dynasty ceramics (960–1279 AD). Imperial potters spent generations perfecting this glaze, believing its cool, stone-like quality represented the perfect harmony between heaven and earth.">
           <div class="cs-swatch" style="background:#8F9779"></div>
           <div class="cs-body">
             <span class="cs-role">Accent</span>
@@ -99,6 +103,13 @@
             </div>
 
             <div class="flip-card-back" id="dynamic-back">
+              <div class="history-drawer" id="history-drawer">
+                <div class="drawer-content">
+                  <span class="drawer-label">Historical Context</span>
+                  <p id="dynamic-history">Moss pigments derived from lichen were used in medieval illuminated manuscripts. This balanced, muted hue was prized because scribes found it rested the reader's eye between dense columns of text — one of history's earliest recorded uses of color for wellbeing.</p>
+                  <button class="drawer-close" id="close-history">Close</button>
+                </div>
+              </div>
               <h3 class="back-title" id="dynamic-back-title">Composed Calm</h3>
               <ul class="trait-list" id="dynamic-traits">
                 <li>Balanced</li>
@@ -108,6 +119,12 @@
               <p class="back-desc" id="dynamic-desc">The measured calm of moss on stone. Neither urgent nor passive,
                 simply present and composed.</p>
               <p class="flip-hint" id="dynamic-back-hint">Tap to return</p>
+              <button class="history-trigger" id="open-history">
+                <span>View History</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><path d="M12 16v-4m0-4h.01"/>
+                </svg>
+              </button>
             </div>
 
           </div>

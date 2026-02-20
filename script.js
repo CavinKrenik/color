@@ -144,10 +144,14 @@ if (dynamicCard) {
   });
 
   function selectColor(btn) {
-    const { hex, r, g, b, name, psych, traits, desc } = btn.dataset;
+    const { hex, r, g, b, name, psych, traits, desc, history } = btn.dataset;
 
     dynamicCard.classList.remove('flipped');
     dynamicCard.style.opacity = '0';
+
+    /* reset drawer */
+    const drawer = document.getElementById('history-drawer');
+    if (drawer) drawer.classList.remove('active');
 
     setTimeout(() => {
       /* front */
@@ -161,6 +165,10 @@ if (dynamicCard) {
       document.getElementById('dynamic-traits').innerHTML = traits.split('|').map(t => `<li>${t}</li>`).join('');
       document.getElementById('dynamic-desc').textContent = desc;
 
+      /* history */
+      const historyEl = document.getElementById('dynamic-history');
+      if (historyEl) historyEl.textContent = history || '';
+
       document.querySelectorAll('.color-selector').forEach(s => s.classList.remove('cs-active'));
       btn.classList.add('cs-active');
 
@@ -170,6 +178,21 @@ if (dynamicCard) {
 
   document.querySelectorAll('.color-selector').forEach(btn => {
     btn.addEventListener('click', () => selectColor(btn));
+  });
+
+  /* history drawer events */
+  document.getElementById('open-history')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    document.getElementById('history-drawer')?.classList.add('active');
+  });
+
+  document.getElementById('close-history')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    document.getElementById('history-drawer')?.classList.remove('active');
+  });
+
+  document.getElementById('history-drawer')?.addEventListener('click', (e) => {
+    e.stopPropagation();
   });
 }
 

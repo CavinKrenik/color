@@ -35,7 +35,8 @@
 
         <button class="color-selector cs-active" data-hex="#0E550A" data-r="14" data-g="85" data-b="10"
           data-name="Deep Forest Green" data-psych="Ancient Strength" data-traits="Grounded|Rooted|Enduring"
-          data-desc="The quiet permanence of an ancient forest floor. Deep, dependable, unwavering in its strength.">
+          data-desc="The quiet permanence of an ancient forest floor. Deep, dependable, unwavering in its strength."
+          data-history="Before synthetic dyes arrived in the 1850s, these dark forest greens were achieved with 'green earth' — clay pigments mined across Europe. The color was a mark of merchant-class prosperity and guild membership in medieval cities.">
           <div class="cs-swatch" style="background:#0E550A"></div>
           <div class="cs-body">
             <span class="cs-role">Primary</span>
@@ -46,7 +47,8 @@
 
         <button class="color-selector" data-hex="#1A3816" data-r="26" data-g="56" data-b="22" data-name="Ancient Pine"
           data-psych="Time & Wisdom" data-traits="Timeless|Wise|Silent"
-          data-desc="The dark needles of a century-old pine. It has seen seasons come and go, standing in silent wisdom.">
+          data-desc="The dark needles of a century-old pine. It has seen seasons come and go, standing in silent wisdom."
+          data-history="In the Victorian era, dark greens were the preferred tone for libraries, studies, and billiard rooms — spaces for quiet authority. Paint merchants of the period called this shade 'invisible green,' used on park benches and ironwork so fixtures would recede into the landscape.">
           <div class="cs-swatch" style="background:#1A3816"></div>
           <div class="cs-body">
             <span class="cs-role">Secondary</span>
@@ -57,7 +59,8 @@
 
         <button class="color-selector" data-hex="#2D4F22" data-r="45" data-g="79" data-b="34" data-name="Dense Canopy"
           data-psych="Protective Shelter" data-traits="Protective|Dense|Secure"
-          data-desc="The middle layer of the deep woods. Thick and protective, it blocks the wind and shelters the earth.">
+          data-desc="The middle layer of the deep woods. Thick and protective, it blocks the wind and shelters the earth."
+          data-history="Military greens entered formal use in the late 19th century when armies recognized that forest tones provided natural cover. This mid-value green bridged civilian and military life — it appeared in both officer dress uniforms and English country estate interiors of the same era.">
           <div class="cs-swatch" style="background:#2D4F22"></div>
           <div class="cs-body">
             <span class="cs-role">Midtone</span>
@@ -68,7 +71,8 @@
 
         <button class="color-selector" data-hex="#10290D" data-r="16" data-g="41" data-b="13"
           data-name="Evergreen Shadow" data-psych="Structural Depth" data-traits="Deep|Structural|Anchoring"
-          data-desc="The deepest shadow at the base of the trunk. It anchors the visual field just as roots anchor the tree.">
+          data-desc="The deepest shadow at the base of the trunk. It anchors the visual field just as roots anchor the tree."
+          data-history="Called 'vert' in heraldic tradition, near-black greens carried immense status across medieval European courts. In illuminated manuscripts, scribes reserved the deepest greens for border ornamentation — the outer frame that made sacred texts feel enclosed and protected.">
           <div class="cs-swatch" style="background:#10290D"></div>
           <div class="cs-body">
             <span class="cs-role">Highlight</span>
@@ -99,6 +103,13 @@
             </div>
 
             <div class="flip-card-back" id="dynamic-back">
+              <div class="history-drawer" id="history-drawer">
+                <div class="drawer-content">
+                  <span class="drawer-label">Historical Context</span>
+                  <p id="dynamic-history">Before synthetic dyes arrived in the 1850s, these dark forest greens were achieved with 'green earth' — clay pigments mined across Europe. The color was a mark of merchant-class prosperity and guild membership in medieval cities.</p>
+                  <button class="drawer-close" id="close-history">Close</button>
+                </div>
+              </div>
               <h3 class="back-title" id="dynamic-back-title">Ancient Strength</h3>
               <ul class="trait-list" id="dynamic-traits">
                 <li>Grounded</li>
@@ -108,6 +119,12 @@
               <p class="back-desc" id="dynamic-desc">The quiet permanence of an ancient forest floor. Deep, dependable,
                 unwavering in its strength.</p>
               <p class="flip-hint" id="dynamic-back-hint">Tap to return</p>
+              <button class="history-trigger" id="open-history">
+                <span>View History</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><path d="M12 16v-4m0-4h.01"/>
+                </svg>
+              </button>
             </div>
 
           </div>

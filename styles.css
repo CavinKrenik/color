@@ -480,51 +480,48 @@ body {
 
 /* enter */
 .page.active .flip-card {
+  -webkit-animation: cardEnter 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
   animation: cardEnter 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
 }
 
-@keyframes cardEnter {
-  from {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-  }
+@-webkit-keyframes cardEnter {
+  from { opacity: 0; -webkit-transform: translateY(40px) scale(0.95); transform: translateY(40px) scale(0.95); }
+  to   { opacity: 1; -webkit-transform: translateY(0) scale(1);        transform: translateY(0) scale(1); }
+}
 
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+@keyframes cardEnter {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .page.active .color-theory-bar {
+  -webkit-animation: barSlideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
   animation: barSlideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
 }
 
-@keyframes barSlideUp {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(20px);
-  }
+@-webkit-keyframes barSlideUp {
+  from { opacity: 0; -webkit-transform: translateX(-50%) translateY(20px); transform: translateX(-50%) translateY(20px); }
+  to   { opacity: 1; -webkit-transform: translateX(-50%) translateY(0);    transform: translateX(-50%) translateY(0); }
+}
 
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
+@keyframes barSlideUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
 .page.active .page-header {
+  -webkit-animation: headerFade 0.5s ease 0.1s both;
   animation: headerFade 0.5s ease 0.1s both;
 }
 
-@keyframes headerFade {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
+@-webkit-keyframes headerFade {
+  from { opacity: 0; -webkit-transform: translateY(-10px); transform: translateY(-10px); }
+  to   { opacity: 1; -webkit-transform: translateY(0);     transform: translateY(0); }
+}
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes headerFade {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* desktop */
@@ -666,6 +663,7 @@ a.nav-dot {
 
 /* stability */
 .stability-bg {
+  -webkit-animation: stabilityBgFade 8s ease-in-out infinite !important;
   animation: stabilityBgFade 8s ease-in-out infinite !important;
 }
 
@@ -681,6 +679,17 @@ a.nav-dot {
     filter: brightness(0.92) saturate(0.88);
   }
 }
+
+.harmony-bg {
+  -webkit-animation: harmonyBgFade 10s ease-in-out infinite !important;
+  animation: harmonyBgFade 10s ease-in-out infinite !important;
+}
+
+@keyframes harmonyBgFade {
+  0%, 100% { filter: brightness(1) saturate(1); }
+  50%       { filter: brightness(0.95) saturate(0.92); }
+}
+
 
 
 
@@ -836,6 +845,7 @@ a.nav-dot {
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-perspective: 1200px;
   perspective: 1200px;
 }
 

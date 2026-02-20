@@ -156,15 +156,22 @@ if (dynamicCard) {
 
     setTimeout(() => {
       /* front */
-      document.getElementById('dynamic-ring').style.borderColor = `rgba(${r},${g},${b},0.45)`;
-      document.getElementById('dynamic-swatch').style.background = hex;
-      document.getElementById('dynamic-name').textContent = name;
-      document.getElementById('dynamic-hex').textContent = hex;
+      const ring = document.getElementById('dynamic-ring');
+      const swatch = document.getElementById('dynamic-swatch');
+      const nameEl = document.getElementById('dynamic-name');
+      const hexEl = document.getElementById('dynamic-hex');
+      if (ring)   ring.style.borderColor = `rgba(${r},${g},${b},0.45)`;
+      if (swatch) swatch.style.background = hex;
+      if (nameEl) nameEl.textContent = name;
+      if (hexEl)  hexEl.textContent = hex;
 
       /* back */
-      document.getElementById('dynamic-back-title').textContent = psych;
-      document.getElementById('dynamic-traits').innerHTML = traits.split('|').map(t => `<li>${t}</li>`).join('');
-      document.getElementById('dynamic-desc').textContent = desc;
+      const backTitle = document.getElementById('dynamic-back-title');
+      const traitsList = document.getElementById('dynamic-traits');
+      const descEl = document.getElementById('dynamic-desc');
+      if (backTitle)  backTitle.textContent = psych;
+      if (traitsList) traitsList.innerHTML = traits.split('|').map(t => `<li>${t}</li>`).join('');
+      if (descEl)     descEl.textContent = desc;
 
       /* history */
       const historyEl = document.getElementById('dynamic-history');

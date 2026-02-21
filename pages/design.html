@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design - A Forest of Greens</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/landing.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/design.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section class="page design-page active" data-page-index="6">
+        <!-- header -->
+        <header class="explore-header"
+            style="position: absolute; top: 0; left: 0; right: 0; display: flex; align-items: center; padding: 1.2rem 1.5rem; z-index: 20;">
+            <a href="../index.html" class="back-btn" aria-label="Back to home">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <div style="flex:1"></div>
+            <div style="width:42px"></div>
+        </header>
+
+        <!-- Sticky jump nav -->
+        <nav class="design-jump-nav">
+            <a href="#" onclick="this.closest('.design-page').scrollTop=0;return false;" class="jump-nav-link">Top</a>
+            <a href="#design-colors" class="jump-nav-link">Colors</a>
+            <a href="#design-ux" class="jump-nav-link">UX</a>
+            <a href="#design-process" class="jump-nav-link">Prototype</a>
+        </nav>
+
+        <div class="landing-content" style="z-index: 20;">
+
+            <!-- Title -->
+            <h1 class="site-title" style="margin-bottom: 0.4rem;">Design</h1>
+
+            <!-- Intro -->
+            <div class="design-intro">
+                <h2>A Case Study in Slow Design</h2>
+                <p>
+                    <em>A Forest of Greens</em> uses nature's colors to create a calm, focused user experience.
+                    Every choice, from palette to interaction, is designed to slow the visitor down,
+                    inviting them to observe rather than consume.
+                </p>
+            </div>
+
+            <!-- ======== COLORS ======== -->
+            <div id="design-colors">
+                <div class="design-columns palette-hero">
+                    <div class="design-col palette-hero-img">
+                        <img src="../assets/XD.png" alt="Adobe XD prototype screenshot of A Forest of Greens">
+                    </div>
+                    <div class="design-col design-col-right palette-hero-swatches">
+                        <h2 class="design-section-title" style="text-align: left;">Color Palette</h2>
+                        <p class="design-section-subtitle" style="text-align: left;">The full palette, from deep neutrals to vibrant greens</p>
+
+                        <div class="swatch-row" style="justify-content: flex-start;">
+                            <div class="swatch-card">
+                                <div class="swatch-circle" style="background: #0A0A0A; border-color: rgba(255,255,255,0.25);"></div>
+                                <span class="swatch-label">Background</span>
+                                <span class="swatch-hex">#0A0A0A</span>
+                            </div>
+                            <div class="swatch-card">
+                                <div class="swatch-circle" style="background: #111111; border-color: rgba(255,255,255,0.25);"></div>
+                                <span class="swatch-label">Surface</span>
+                                <span class="swatch-hex">#111111</span>
+                            </div>
+                            <div class="swatch-card">
+                                <div class="swatch-circle" style="background: #FFFFFF;"></div>
+                                <span class="swatch-label">Text</span>
+                                <span class="swatch-hex">#FFFFFF</span>
+                            </div>
+                        </div>
+                        <div class="swatch-row" style="justify-content: flex-start;">
+                            <div class="swatch-card">
+                                <div class="swatch-circle" style="background: #0E550A;"></div>
+                                <span class="swatch-label">Stability</span>
+                                <span class="swatch-hex">#0E550A</span>
+                            </div>
+                            <div class="swatch-card">
+                                <div class="swatch-circle" style="background: #496415;"></div>
+                                <span class="swatch-label">Harmony</span>
+                                <span class="swatch-hex">#496415</span>
+                            </div>
+                            <div class="swatch-card">
+                                <div class="swatch-circle" style="background: #B2D824;"></div>
+                                <span class="swatch-label">Growth</span>
+                                <span class="swatch-hex">#B2D824</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======== TYPOGRAPHY & UX ======== -->
+            <div class="design-divider"></div>
+
+            <div id="design-typography">
+                <div class="design-columns">
+                    <div class="design-col">
+                        <h3>Typography</h3>
+                        <p>
+                            <strong style="font-family: 'Playfair Display', serif;">Playfair Display</strong>
+                            provides editorial elegance for headings and titles, grounding the visual hierarchy
+                            in classical proportion. <strong>Inter</strong> handles body text and UI elements
+                            with quiet clarity, ensuring readability at every size.
+                        </p>
+                    </div>
+                    <div class="design-col design-col-right" id="design-ux">
+                        <h3>Flip-Card Interaction</h3>
+                        <p>
+                            Each color page features a flip-card that invites the user to pause and engage.
+                            The front shows a curated visual; the back reveals the historical and cultural
+                            story behind the shade. This deliberate two-step interaction rewards curiosity
+                            and supports the site's philosophy of slow, intentional exploration.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======== TECHNICAL ======== -->
+            <div class="design-divider"></div>
+
+            <div id="design-technical">
+                <div class="design-columns">
+                    <div class="design-col">
+                        <h3>Responsive Grid</h3>
+                        <p>
+                            The layout is built on a flexible grid system that adapts seamlessly between
+                            mobile and desktop. Columns collapse to a single stack on smaller screens,
+                            preserving the reading order and visual rhythm without sacrificing content
+                            density on wider displays.
+                        </p>
+                    </div>
+                    <div class="design-col design-col-right">
+                        <h3>Performance & Accessibility</h3>
+                        <p>
+                            White text on dark backgrounds maintains high contrast throughout.
+                            Animations respect <code style="font-size: 0.85em; color: rgba(255,255,255,0.5);">prefers-reduced-motion</code>,
+                            and the navigation system works fully with keyboard and screen readers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======== DESIGN PROCESS / PROTOTYPE ======== -->
+            <div class="design-divider"></div>
+
+            <div id="design-process">
+                <h2 class="design-section-title">Design Process</h2>
+                <p class="design-section-subtitle">Prototyped and iterated in Adobe XD</p>
+
+                <div class="design-prototype">
+                    <a href="https://xd.adobe.com/view/3a71a765-dda8-44cd-8ea1-85a9cff45a60-6f22/"
+                       target="_blank" rel="noopener" class="xd-btn">
+                        View Interactive Prototype in Adobe XD
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 17L17 7M17 7H7M17 7v10" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Back to top -->
+            <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);">
+                <a href="#" onclick="this.closest('.design-page').scrollTop=0;return false;" class="jump-nav-link">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" style="transform: rotate(-90deg);">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                    Back to Top
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- nav -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true">
+        <button class="nav-close" id="nav-close" aria-label="Close menu">&times;</button>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li class="nav-divider"></li>
+            <li><a href="stability.html">Stability</a></li>
+            <li><a href="harmony.html">Harmony</a></li>
+            <li><a href="growth.html">Growth</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="nav-divider"></li>
+            <li><a href="design.html" class="active-nav">Design</a></li>
+        </ul>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+/* Design Case Study Page
+   Used by: design.html */
+
+.design-page {
+  overflow-y: auto;
+  overflow-x: hidden;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 60px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+}
+
+.design-page .landing-content {
+  max-width: min(1100px, 90vw);
+  padding-top: 2rem;
+  box-sizing: border-box;
+}
+
+/* ---- Jump nav (reuse about-page pattern) ---- */
+.design-jump-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+}
+
+/* ---- Intro ---- */
+.design-intro {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem;
+}
+
+.design-intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+}
+
+.design-intro p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+}
+
+/* ---- Section headings ---- */
+.design-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.design-section-subtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.04em;
+}
+
+/* ---- Color swatches ---- */
+.swatch-row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.swatch-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 140px;
+}
+
+.swatch-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.swatch-circle:hover {
+  transform: scale(1.08);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.swatch-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.swatch-hex {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---- Two-column layout ---- */
+.design-columns {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.design-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.design-col-right {
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 3rem;
+}
+
+.design-col h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.design-col p {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.8;
+}
+
+@media (max-width: 767px) {
+  .design-columns {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .design-col-right {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 2rem;
+  }
+}
+
+/* ---- Palette hero (img left, swatches right) ---- */
+.palette-hero {
+  align-items: center;
+}
+
+.palette-hero-img img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.palette-hero-img img:hover {
+  opacity: 1;
+}
+
+.palette-hero-swatches .swatch-row {
+  margin-bottom: 1.5rem;
+  gap: 1.5rem;
+}
+
+.palette-hero-swatches .swatch-row:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .palette-hero-swatches .swatch-row {
+    justify-content: center !important;
+  }
+
+  .palette-hero-swatches .design-section-title,
+  .palette-hero-swatches .design-section-subtitle {
+    text-align: center !important;
+  }
+}
+
+/* ---- Divider ---- */
+.design-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 3rem 0;
+}
+
+/* ---- XD prototype section ---- */
+.design-prototype {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.design-prototype img {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.design-prototype img:hover {
+  opacity: 1;
+}
+
+.xd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.xd-btn:hover {
+  color: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ---- Section anchors offset ---- */
+#design-colors,
+#design-typography,
+#design-ux,
+#design-technical,
+#design-process {
+  scroll-margin-top: 60px;
+}

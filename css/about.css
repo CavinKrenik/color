@@ -1,0 +1,33 @@
+/*About Page About section layout and ad preview component.
+   Used by: about.html*/
+
+.about-page {
+  overflow-y: auto;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 72px;
+  padding-bottom: 60px;
+}
+
+.ad-preview {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: 1.8rem auto 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+}
+
+.ad-preview:hover {
+  opacity: 1;
+}
+
+.ad-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

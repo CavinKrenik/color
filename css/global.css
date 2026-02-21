@@ -1,0 +1,430 @@
+/* Global Styles: reset, variables, body, page system,
+   page backgrounds & headers, navigation, bottom nav, progress,
+   link resets, touch overrides, and accessibility.*/
+
+
+/* ------------------------------------------------------------
+   Reset & Custom Properties
+   ------------------------------------------------------------ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-green: #0E550A;
+  --moss-green: #496415;
+  --spring-green: #B2D824;
+  --page-transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  --card-flip: 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* ------------------------------------------------------------
+   Base Typography & Body
+   ------------------------------------------------------------ */
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+  width: 100vw;
+  width: 100dvw;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ------------------------------------------------------------
+   Page System & Transitions
+   ------------------------------------------------------------ */
+
+.page {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: opacity var(--page-transition), transform var(--page-transition), visibility 0s linear var(--page-transition);
+  z-index: 1;
+}
+
+.page.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity var(--page-transition), transform var(--page-transition), visibility 0s linear 0s;
+  z-index: 10;
+}
+
+
+/* ------------------------------------------------------------
+   Page Backgrounds & Headers (shared by color + about pages)
+   ------------------------------------------------------------ */
+
+.page-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.page.active .page-bg {
+  will-change: transform;
+}
+
+.page-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.page-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  z-index: 20;
+}
+
+.page-number {
+  display: none;
+}
+
+.page-header .page-title {
+  flex: 1;
+  text-align: center;
+}
+
+.back-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-2px);
+}
+
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.page-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+}
+
+.page-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+}
+
+
+/* ------------------------------------------------------------
+   Navigation (Hamburger & Overlay)
+   ------------------------------------------------------------ */
+
+.hamburger {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.5rem;
+  z-index: 200;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.hamburger span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 18, 4, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  z-index: 199;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.nav-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.8rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-close:hover {
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-links a {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.3s ease, letter-spacing 0.3s ease;
+  display: inline-block;
+  padding: 0.2rem 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active-nav {
+  color: #fff;
+  letter-spacing: 0.07em;
+}
+
+.nav-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0.6rem 0;
+}
+
+
+/* ------------------------------------------------------------
+   Bottom Navigation & Progress Bar
+   ------------------------------------------------------------ */
+
+.bottom-nav {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  gap: 12px;
+  padding: 8px 16px;
+}
+
+.nav-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.nav-dot.active {
+  background: #fff;
+  border-color: #fff;
+  transform: scale(1.2);
+}
+
+.nav-dot:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.next-page-btn {
+  position: absolute;
+  bottom: 14px;
+  right: 20px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.next-page-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transform: translateX(3px);
+}
+
+.progress-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 50;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--dark-green), var(--moss-green), var(--spring-green));
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 2px 2px 0;
+}
+
+
+/* ------------------------------------------------------------
+   Link Resets
+   ------------------------------------------------------------ */
+
+a.cta-btn,
+a.back-btn,
+a.next-page-btn {
+  text-decoration: none;
+}
+
+a.nav-dot {
+  text-decoration: none;
+  display: block;
+}
+
+
+/* ------------------------------------------------------------
+   Touch & Vendor Overrides
+   ------------------------------------------------------------ */
+
+@supports (-webkit-touch-callout: none) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   Accessibility (prefers-reduced-motion)
+   ------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /* functional — keep the flip visible */
+  .flip-card-inner {
+    transition-duration: 0.7s !important;
+  }
+
+  /* decorative — stop cleanly instead of strobing at 0.01ms */
+  .color-swatch-ring,
+  .flip-hint,
+  .stability-bg,
+  .harmony-bg {
+    -webkit-animation: none !important;
+    animation: none !important;
+  }
+
+  /* explore cards — disable layout-thrashing flex transition */
+  .theme-card-big {
+    transition: none !important;
+  }
+
+  .theme-card-bg,
+  .theme-card-overlay,
+  .theme-card-arrow {
+    transition: none !important;
+  }
+}

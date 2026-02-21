@@ -1,11 +1,12 @@
 /* config */
+const inPagesDir = location.pathname.includes('/pages/');
 const pageUrls = [
-  'index.html',
-  'explore.html',
-  'stability.html',
-  'harmony.html',
-  'growth.html',
-  'about.html',
+  inPagesDir ? '../index.html' : 'index.html',
+  inPagesDir ? 'explore.html' : 'pages/explore.html',
+  inPagesDir ? 'stability.html' : 'pages/stability.html',
+  inPagesDir ? 'harmony.html' : 'pages/harmony.html',
+  inPagesDir ? 'growth.html' : 'pages/growth.html',
+  inPagesDir ? 'about.html' : 'pages/about.html',
 ];
 
 const section = document.querySelector('.page');

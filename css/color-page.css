@@ -2,18 +2,14 @@
    Used by: stability.html, harmony.html, growth.html*/
 
 
-/* ------------------------------------------------------------
-   Theme Backgrounds
-   ------------------------------------------------------------ */
+/*Theme Background*/
 
 .growth-bg {
   transform-origin: center bottom;
 }
 
 
-/* ------------------------------------------------------------
-   Flip Cards
-   ------------------------------------------------------------ */
+/*Flip Cards*/
 
 .card-container {
   position: relative;
@@ -173,9 +169,7 @@
 }
 
 
-/* ------------------------------------------------------------
-   Color Selector (Dynamic Cards)
-   ------------------------------------------------------------ */
+/* Color Selector */
 
 .color-overview-layout {
   position: relative;
@@ -281,9 +275,7 @@
 }
 
 
-/* ------------------------------------------------------------
-   History Drawer
-   ------------------------------------------------------------ */
+/* History drawer cards */
 
 .history-drawer {
   position: absolute;
@@ -376,30 +368,58 @@
 }
 
 
-/* ------------------------------------------------------------
-   Animations & Keyframes
-   ------------------------------------------------------------ */
+/*Animations and Keyframes */
 
 /* Swatch pulse */
 @-webkit-keyframes swatchPulse {
-  0%, 100% { -webkit-transform: scale(1); transform: scale(1); }
-  50%       { -webkit-transform: scale(1.05); transform: scale(1.05); }
+
+  0%,
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
 }
 
 @keyframes swatchPulse {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.05); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 /* Flip hint pulse */
 @-webkit-keyframes hintPulse {
-  0%, 100% { opacity: 0.5; }
-  50%       { opacity: 0.8; }
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
 }
 
 @keyframes hintPulse {
-  0%, 100% { opacity: 0.5; }
-  50%       { opacity: 0.8; }
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
 }
 
 /* Card entrance */
@@ -409,13 +429,29 @@
 }
 
 @-webkit-keyframes cardEnter {
-  from { opacity: 0; -webkit-transform: translateY(40px) scale(0.95); transform: translateY(40px) scale(0.95); }
-  to   { opacity: 1; -webkit-transform: translateY(0) scale(1);        transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(40px) scale(0.95);
+    transform: translateY(40px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1);
+  }
 }
 
 @keyframes cardEnter {
-  from { opacity: 0; transform: translateY(40px) scale(0.95); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Color theory bar entrance */
@@ -425,29 +461,61 @@
 }
 
 @-webkit-keyframes barSlideUp {
-  from { opacity: 0; -webkit-transform: translateX(-50%) translateY(20px); transform: translateX(-50%) translateY(20px); }
-  to   { opacity: 1; -webkit-transform: translateX(-50%) translateY(0);    transform: translateX(-50%) translateY(0); }
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-50%) translateY(20px);
+    transform: translateX(-50%) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 @keyframes barSlideUp {
-  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
-  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
-/* Header fade-in */
+/* Header fade in */
 .page.active .page-header {
   -webkit-animation: headerFade 0.5s ease 0.1s both;
   animation: headerFade 0.5s ease 0.1s both;
 }
 
 @-webkit-keyframes headerFade {
-  from { opacity: 0; -webkit-transform: translateY(-10px); transform: translateY(-10px); }
-  to   { opacity: 1; -webkit-transform: translateY(0);     transform: translateY(0); }
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
 }
 
 @keyframes headerFade {
-  from { opacity: 0; transform: translateY(-10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Stability background breathing */
@@ -457,10 +525,12 @@
 }
 
 @keyframes stabilityBgFade {
+
   0%,
   100% {
     filter: brightness(1) saturate(1);
   }
+
   50% {
     filter: brightness(0.92) saturate(0.88);
   }
@@ -473,11 +543,18 @@
 }
 
 @keyframes harmonyBgFade {
-  0%, 100% { filter: brightness(1) saturate(1); }
-  50%       { filter: brightness(0.95) saturate(0.92); }
+
+  0%,
+  100% {
+    filter: brightness(1) saturate(1);
+  }
+
+  50% {
+    filter: brightness(0.95) saturate(0.92);
+  }
 }
 
-/* Theme glow effects */
+/* glow effects */
 .stability-glow {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(14, 85, 10, 0.5);
 }
@@ -490,7 +567,7 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(178, 216, 36, 0.5);
 }
 
-/* Touch — flip card press */
+/* flip card press */
 @media (hover: none) {
   .flip-card:active .flip-card-inner {
     transform: scale(0.98);

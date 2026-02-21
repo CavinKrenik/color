@@ -12,7 +12,7 @@
   scroll-padding-top: 50px;
 }
 
-/* Sticky jump-to nav */
+/* Sticky jumpto nav */
 .about-jump-nav {
   position: sticky;
   top: 0;
@@ -58,7 +58,7 @@
   scroll-margin-top: 60px;
 }
 
-/* Wider containers scoped to about page only */
+/* Wider containers about page only */
 .about-page .landing-content {
   max-width: min(1100px, 90vw);
   padding-top: 2rem;
@@ -69,7 +69,7 @@
   max-width: 100%;
 }
 
-/* Two-column intro layout */
+/* Two column intro layout */
 .about-columns {
   display: flex;
   gap: 3rem;

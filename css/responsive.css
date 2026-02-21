@@ -242,4 +242,21 @@
     min-width: 0;
     margin: 0 auto;
   }
+
+  /* About page: restore padding so sticky nav sits at the top */
+  .about-page {
+    padding-top: 0;
+    padding-bottom: 60px;
+  }
+
+  /* Compact jump nav for small screens */
+  .about-jump-nav {
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .about-jump-nav .jump-nav-link {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.8rem;
+  }
 }

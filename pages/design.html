@@ -31,20 +31,20 @@
             <div style="width:42px"></div>
         </header>
 
-        <!-- Sticky jump nav -->
+        <!-- nav -->
         <nav class="design-jump-nav">
             <a href="#" onclick="this.closest('.design-page').scrollTop=0;return false;" class="jump-nav-link">Top</a>
             <a href="#design-colors" class="jump-nav-link">Colors</a>
-            <a href="#design-ux" class="jump-nav-link">UX</a>
+            <a href="#design-typography" class="jump-nav-link">UX</a>
             <a href="#design-process" class="jump-nav-link">Prototype</a>
         </nav>
 
         <div class="landing-content" style="z-index: 20;">
 
-            <!-- Title -->
+            <!-- title -->
             <h1 class="site-title" style="margin-bottom: 0.4rem;">A Forest of Greens</h1>
 
-            <!-- Intro -->
+            <!-- intro -->
             <div class="design-intro">
                 <h2>About Design</h2>
                 <p>
@@ -54,55 +54,152 @@
                 </p>
             </div>
 
-            <!-- ======== COLORS ======== -->
+            <!-- colors -->
             <div id="design-colors">
-                <div class="design-columns palette-hero">
-                    <div class="design-col palette-hero-img">
-                        <img src="../assets/XD.png" alt="Adobe XD prototype screenshot of A Forest of Greens">
-                    </div>
-                    <div class="design-col design-col-right palette-hero-swatches">
-                        <h2 class="design-section-title" style="text-align: left;">Color Palette</h2>
-                        <p class="design-section-subtitle" style="text-align: left;">The full palette, from deep neutrals to vibrant greens</p>
+                <h2 class="design-section-title">Color Palette</h2>
+                <p class="design-section-subtitle">Every color was sampled directly from the forest background images.</p>
 
-                        <div class="swatch-row" style="justify-content: flex-start;">
-                            <div class="swatch-card">
-                                <div class="swatch-circle" style="background: #0A0A0A; border-color: rgba(255,255,255,0.25);"></div>
-                                <span class="swatch-label">Background</span>
-                                <span class="swatch-hex">#0A0A0A</span>
-                            </div>
-                            <div class="swatch-card">
-                                <div class="swatch-circle" style="background: #111111; border-color: rgba(255,255,255,0.25);"></div>
-                                <span class="swatch-label">Surface</span>
-                                <span class="swatch-hex">#111111</span>
-                            </div>
-                            <div class="swatch-card">
-                                <div class="swatch-circle" style="background: #FFFFFF;"></div>
-                                <span class="swatch-label">Text</span>
-                                <span class="swatch-hex">#FFFFFF</span>
+                <div class="design-columns palette-showcase">
+                    <!-- swatches -->
+                    <div class="design-col">
+                        <!-- stability -->
+                        <div class="palette-group">
+                            <span class="palette-group-label">Stability</span>
+                            <div class="swatch-grid">
+                                <div class="swatch-card">
+                                    <div class="swatch-circle" style="background: #0E550A;"></div>
+                                    <span class="swatch-label">Deep Forest Green</span>
+                                    <span class="swatch-hex">#0E550A</span>
+                                </div>
+                                <div class="swatch-card">
+                                    <div class="swatch-circle" style="background: #1A3816;"></div>
+                                    <span class="swatch-label">Ancient Pine</span>
+                                    <span class="swatch-hex">#1A3816</span>
+                                </div>
+                                <div class="swatch-card">
+                                    <div class="swatch-circle" style="background: #2D4F22;"></div>
+                                    <span class="swatch-label">Dense Canopy</span>
+                                    <span class="swatch-hex">#2D4F22</span>
+                                </div>
+                                <div class="swatch-card">
+                                    <div class="swatch-circle" style="background: #10290D;"></div>
+                                    <span class="swatch-label">Evergreen Shadow</span>
+                                    <span class="swatch-hex">#10290D</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="swatch-row" style="justify-content: flex-start;">
-                            <div class="swatch-card">
-                                <div class="swatch-circle" style="background: #0E550A;"></div>
-                                <span class="swatch-label">Stability</span>
-                                <span class="swatch-hex">#0E550A</span>
+
+                        <!-- harmony -->
+                        <div class="palette-group">
+                            <span class="palette-group-label">Harmony</span>
+                            <div class="swatch-grid">
+                                <div class="swatch-card">
+                                    <div class="swatch-circle" style="background: #496415;"></div>
+                                    <span class="swatch-label">Moss Green</span>
+                                    <span class="swatch-hex">#496415</span>
+                                </div>
+                                <div class="swatch-card">
+                                    <div class="swatch-circle" style="background: #6B8E23;"></div>
+                                    <span class="swatch-label">Sage Canopy</span>
+                                    <span class="swatch-hex">#6B8E23</span>
+                                </div>
+                                <div class="swatch-card">
+                                    <div class="swatch-circle" style="background: #4F7942;"></div>
+                                    <span class="swatch-label">Fern Frond</span>
+                                    <span class="swatch-hex">#4F7942</span>
+                                </div>
+                                <div class="swatch-card">
+                                    <div class="swatch-circle" style="background: #8F9779;"></div>
+                                    <span class="swatch-label">Lichen Bed</span>
+                                    <span class="swatch-hex">#8F9779</span>
+                                </div>
                             </div>
-                            <div class="swatch-card">
-                                <div class="swatch-circle" style="background: #496415;"></div>
-                                <span class="swatch-label">Harmony</span>
-                                <span class="swatch-hex">#496415</span>
+                        </div>
+
+                        <!-- growth -->
+                        <div class="palette-group">
+                            <span class="palette-group-label">Growth</span>
+                            <div class="swatch-grid">
+                                <div class="swatch-card">
+                                    <div class="swatch-circle" style="background: #B2D824;"></div>
+                                    <span class="swatch-label">Spring Green</span>
+                                    <span class="swatch-hex">#B2D824</span>
+                                </div>
+                                <div class="swatch-card">
+                                    <div class="swatch-circle" style="background: #D1E231;"></div>
+                                    <span class="swatch-label">Sunlit Shoot</span>
+                                    <span class="swatch-hex">#D1E231</span>
+                                </div>
+                                <div class="swatch-card">
+                                    <div class="swatch-circle" style="background: #9CD84C;"></div>
+                                    <span class="swatch-label">New Leaf</span>
+                                    <span class="swatch-hex">#9CD84C</span>
+                                </div>
+                                <div class="swatch-card">
+                                    <div class="swatch-circle" style="background: #4A5D23;"></div>
+                                    <span class="swatch-label">Deep Sapling Stem</span>
+                                    <span class="swatch-hex">#4A5D23</span>
+                                </div>
                             </div>
-                            <div class="swatch-card">
-                                <div class="swatch-circle" style="background: #B2D824;"></div>
-                                <span class="swatch-label">Growth</span>
-                                <span class="swatch-hex">#B2D824</span>
+                        </div>
+                    </div>
+
+                    <!-- flipcard -->
+                    <div class="design-col design-col-right palette-card-col">
+                        <h3>The Flip-Card</h3>
+                        <p>
+                            I want people to actually linger on a page. You see the color first, then you
+                            choose to "uncover" its history. It is about discovery, not just scrolling.
+                        </p>
+                        <div class="demo-flip-card" role="button" tabindex="0" aria-label="Example flip card">
+                            <div class="demo-flip-inner">
+                                <div class="demo-flip-front">
+                                    <div class="demo-swatch-ring">
+                                        <div class="demo-swatch" style="background: #0E550A;"></div>
+                                    </div>
+                                    <span class="demo-color-name">Deep Forest Green</span>
+                                    <span class="demo-color-hex">#0E550A</span>
+                                    <span class="demo-flip-hint">Tap to explore</span>
+                                </div>
+                                <div class="demo-flip-back">
+                                    <h4 class="demo-back-title">Ancient Strength</h4>
+                                    <ul class="demo-trait-list">
+                                        <li>Grounded</li>
+                                        <li>Rooted</li>
+                                        <li>Enduring</li>
+                                    </ul>
+                                    <p class="demo-back-desc">The quiet permanence of an ancient forest floor.</p>
+                                    <span class="demo-flip-hint">Tap to return</span>
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- foundation -->
+                <div class="palette-group palette-foundation">
+                    <span class="palette-group-label">Foundation</span>
+                    <div class="swatch-row">
+                        <div class="swatch-card">
+                            <div class="swatch-circle" style="background: #0A0A0A;"></div>
+                            <span class="swatch-label">Background</span>
+                            <span class="swatch-hex">#0A0A0A</span>
+                        </div>
+                        <div class="swatch-card">
+                            <div class="swatch-circle" style="background: #111111;"></div>
+                            <span class="swatch-label">Surface</span>
+                            <span class="swatch-hex">#111111</span>
+                        </div>
+                        <div class="swatch-card">
+                            <div class="swatch-circle" style="background: #FFFFFF;"></div>
+                            <span class="swatch-label">Text</span>
+                            <span class="swatch-hex">#FFFFFF</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- ======== TYPOGRAPHY & UX ======== -->
+            <!-- typography -->
             <div class="design-divider"></div>
 
             <div id="design-typography">
@@ -111,54 +208,78 @@
                         <h3>Typography</h3>
                         <p>
                             <strong style="font-family: 'Playfair Display', serif;">Playfair Display</strong>
-                            provides editorial elegance for headings and titles, grounding the visual hierarchy
-                            in classical proportion. <strong>Inter</strong> handles body text and UI elements
-                            with quiet clarity, ensuring readability at every size.
-                        </p>
-                    </div>
-                    <div class="design-col design-col-right" id="design-ux">
-                        <h3>Flip-Card Interaction</h3>
-                        <p>
-                            Each color page features a flip-card that invites the user to pause and engage.
-                            The front shows a curated visual; the back reveals the historical and cultural
-                            story behind the shade. This deliberate two-step interaction rewards curiosity
-                            and supports the site's philosophy of slow, intentional exploration.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ======== TECHNICAL ======== -->
-            <div class="design-divider"></div>
-
-            <div id="design-technical">
-                <div class="design-columns">
-                    <div class="design-col">
-                        <h3>Responsive Grid</h3>
-                        <p>
-                            The layout is built on a flexible grid system that adapts seamlessly between
-                            mobile and desktop. Columns collapse to a single stack on smaller screens,
-                            preserving the reading order and visual rhythm without sacrificing content
-                            density on wider displays.
+                            gives the headings a beautiful hand painted trail marker look, And I used <strong>Inter</strong> to keep the body text clean
+                            and easy to read at any size, so your eyes can focus on the colors instead of
+                            fighting the font. I used Google Fonts to make sure the typography loads fast and looks great on any device.
                         </p>
                     </div>
                     <div class="design-col design-col-right">
-                        <h3>Performance & Accessibility</h3>
+                        <h3>Responsive Layout</h3>
                         <p>
-                            White text on dark backgrounds maintains high contrast throughout.
-                            Animations respect <code style="font-size: 0.85em; color: rgba(255,255,255,0.5);">prefers-reduced-motion</code>,
-                            and the navigation system works fully with keyboard and screen readers.
+                            On a phone or your monitor the forest breathes and shifts to
+                            fit your screen. I kept the columns simple so the reading feels like a walk
+                            through the woods, not a cluttered mess.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <!-- ======== DESIGN PROCESS / PROTOTYPE ======== -->
+            <!-- ux -->
+            <div class="design-divider"></div>
+
+            <div id="design-ux">
+                <div class="design-columns">
+                    <div class="design-col">
+                        <h3>Slow Design</h3>
+                        <p>
+                            Instead of hitting the user with a wall of text, the card rewards curiosity.
+                            You have to touch the color to see the story. It is about discovery, not just scrolling.
+                            I wanted the experience to feel like wandering through a forest, not racing through a slideshow.
+                        </p>
+                    </div>
+                    <div class="design-col design-col-right">
+                        <h3>Navigation</h3>
+                        <p>
+                            The buttons and progress dots let you drift between Stability,
+                            Harmony, and Growth at your own pace. There is no rush. The site is built to
+                            feel like wandering through a forest, not racing through a slideshow.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- process -->
             <div class="design-divider"></div>
 
             <div id="design-process">
-                <h2 class="design-section-title">Design Process</h2>
-                <p class="design-section-subtitle">Prototyped and iterated in Adobe XD</p>
+                <h2 class="design-section-title">The Design Process</h2>
+                <p class="design-section-subtitle">Finding the feel before writing a single line of code</p>
+
+                <div class="design-columns">
+                    <div class="design-col">
+                        <h3>Exploring "What Ifs"</h3>
+                        <p>
+                            Instead of jumping straight into code, I spent a lot of time exploring different
+                            possibilities. I used a prototype to play with how the site should actually feel
+                            to someone using it. I experimented with how the images would shift and how the
+                            background might "breathe" as you move through the pages.
+                        </p>
+                    </div>
+                    <div class="design-col design-col-right">
+                        <h3>Trial and Error</h3>
+                        <p>
+                            This stage was all about testing different ways to move between Stability, Harmony,
+                            and Growth using elements like the bottom-right navigation buttons and the progress
+                            dots. It allowed me to visualize the atmosphere of the forest and decide on interactive
+                            elements, like the flip-cards, before building them.
+                        </p>
+                    </div>
+                </div>
+
+                <p class="process-summary">
+                    By exploring these ideas early, I was able to make sure the final site did not just look
+                    like a collection of colors, but felt like a living, immersive experience.
+                </p>
 
                 <div class="design-prototype">
                     <a href="https://xd.adobe.com/view/3a71a765-dda8-44cd-8ea1-85a9cff45a60-6f22/"
@@ -171,7 +292,7 @@
                 </div>
             </div>
 
-            <!-- Back to top -->
+            <!-- top -->
             <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);">
                 <a href="#" onclick="this.closest('.design-page').scrollTop=0;return false;" class="jump-nav-link">
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"

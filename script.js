@@ -218,6 +218,18 @@ if (dynamicCard) {
   });
 }
 
+/* demo flip-card on design page */
+const demoCard = document.querySelector('.demo-flip-card');
+if (demoCard) {
+  demoCard.addEventListener('click', () => demoCard.classList.toggle('flipped'));
+  demoCard.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      demoCard.classList.toggle('flipped');
+    }
+  });
+}
+
 /* video */
 const video = document.querySelector('.video-bg video');
 if (video) {

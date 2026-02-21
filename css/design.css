@@ -98,13 +98,7 @@
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  border: 3px solid rgba(255, 255, 255, 0.12);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.swatch-circle:hover {
-  transform: scale(1.08);
-  border-color: rgba(255, 255, 255, 0.35);
+  border: none;
 }
 
 .swatch-label {
@@ -254,6 +248,239 @@
 .xd-btn:hover {
   color: rgba(255, 255, 255, 0.85);
   border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ---- Palette showcase (swatches left, flip-card right) ---- */
+.palette-showcase {
+  align-items: flex-start;
+}
+
+/* 4 swatches in one row */
+.swatch-grid {
+  display: flex;
+  gap: 0;
+}
+
+.swatch-grid .swatch-card {
+  flex: 1;
+  min-width: 0;
+  gap: 0.4rem;
+}
+
+.swatch-grid .swatch-circle {
+  width: 42px;
+  height: 42px;
+}
+
+.swatch-grid .swatch-label {
+  font-size: 0.72rem;
+}
+
+.swatch-grid .swatch-hex {
+  font-size: 0.65rem;
+}
+
+/* Flip-card column */
+.palette-card-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 80px;
+}
+
+.palette-card-col h3 {
+  align-self: center;
+}
+
+.palette-card-col p {
+  margin-bottom: 1.5rem;
+}
+
+/* ---- Palette groups ---- */
+.palette-group {
+  margin-bottom: 1.8rem;
+  text-align: center;
+}
+
+.palette-group:last-child {
+  margin-bottom: 1rem;
+}
+
+.palette-group .swatch-row {
+  margin-bottom: 0;
+}
+
+.palette-group-label {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.3rem;
+}
+
+.palette-group-desc {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.03em;
+}
+
+/* Foundation row centered below the columns */
+.palette-foundation {
+  text-align: center;
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.palette-foundation .swatch-row {
+  justify-content: center;
+  gap: 3rem;
+}
+
+.palette-foundation .swatch-circle {
+  border: 3px solid rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 767px) {
+  .palette-card-col {
+    position: static;
+  }
+
+  .swatch-grid .swatch-circle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .swatch-grid .swatch-label {
+    font-size: 0.68rem;
+  }
+
+  .palette-foundation .swatch-row {
+    gap: 2rem;
+  }
+}
+
+/* ---- Flip-card demo ---- */
+.demo-flip-card {
+  width: 200px;
+  height: 270px;
+  perspective: 800px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.demo-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.demo-flip-card.flipped .demo-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.demo-flip-front,
+.demo-flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.2rem;
+}
+
+.demo-flip-front {
+  background: #111;
+}
+
+.demo-flip-back {
+  background: #111;
+  transform: rotateY(180deg);
+}
+
+.demo-swatch-ring {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid rgba(14, 85, 10, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-swatch {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+}
+
+.demo-color-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.demo-color-hex {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.08em;
+}
+
+.demo-flip-hint {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+.demo-back-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.demo-trait-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.8rem;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.demo-back-desc {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+}
+
+/* ---- Process summary ---- */
+.process-summary {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.8;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-style: italic;
 }
 
 /* ---- Section anchors offset ---- */

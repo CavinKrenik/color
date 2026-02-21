@@ -130,7 +130,6 @@
 }
 
 .design-col-right {
-  border-left: 1px solid rgba(255, 255, 255, 0.15);
   padding-left: 3rem;
 }
 
@@ -154,9 +153,7 @@
   }
 
   .design-col-right {
-    border-left: none;
     padding-left: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
     padding-top: 2rem;
   }
 }

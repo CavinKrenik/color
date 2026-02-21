@@ -34,50 +34,84 @@
             <div style="width:42px"></div>
         </header>
 
+
+        <!-- Sticky jump nav -->
+        <nav class="about-jump-nav">
+            <a href="#" onclick="this.closest('.about-page').scrollTop=0;return false;" class="jump-nav-link">About</a>
+            <a href="#advertising-section" class="jump-nav-link">Advertising</a>
+            <a href="#references-section" class="jump-nav-link">References</a>
+        </nav>
+
         <div class="landing-content" style="z-index: 20;">
-            <h1 class="site-title">About</h1>
-            <div class="landing-intro" style="font-size: 1.1rem; max-width: 600px; text-align: left; line-height: 1.6;">
-                <p style="margin-bottom: 2rem;">
+            <h1 class="site-title" id="about-section">About</h1>
+            <div class="landing-intro" style="font-size: 1.1rem; text-align: left; line-height: 1.6;">
+
+                <div class="about-columns">
+                    <!-- Left column: The Journey -->
+                    <div class="about-col about-col-left">
+                        <h2
+                            style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.5rem;">
+                            The Journey</h2>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <h3
+                                style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #fff; margin-bottom: 0.5rem; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">
+                                Stability</h3>
+                            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.9);">
+                                Rooted in <strong>Ancient Strength</strong>, this phase explores the deep, enduring
+                                tones that anchor our visual landscape.
+                            </p>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <h3
+                                style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #fff; margin-bottom: 0.5rem; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">
+                                Harmony</h3>
+                            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.9);">
+                                A study in <strong>Composed Calm</strong>, these restorative mid-tones symbolize the
+                                quiet, organic resilience found in the heart of the woods.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3
+                                style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #fff; margin-bottom: 0.5rem; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">
+                                Growth</h3>
+                            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.9);">
+                                Defined by <strong>Vital Expansion</strong>, this final stage captures the high-energy
+                                pulse and forward momentum of a forest in bloom.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right column: Healing Power of Nature -->
+                    <div class="about-col about-col-right">
+                        <h2
+                            style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.5rem;">
+                            The Healing Power of Nature</h2>
+                        <p
+                            style="font-size: 0.95rem; color: rgba(255,255,255,0.9); line-height: 1.8; margin-bottom: 1.2rem;">
+                            Green is inherently tied to the natural world, and our deep-rooted connection with nature
+                            influences our psychological response to the color. Research suggests that exposure to green
+                            environments can have a calming effect on our minds, reducing stress and anxiety levels. It
+                            evokes feelings of serenity and relaxation, making it an ideal choice for spaces dedicated
+                            to healing, such as hospitals or wellness centers.
+                        </p>
+                        <p style="font-size: 0.95rem; color: rgba(255,255,255,0.9); line-height: 1.8;">
+                            Studies have even shown that viewing green scenery or engaging in activities in green
+                            surroundings can enhance cognitive function and boost overall well-being.
+                        </p>
+                    </div>
+                </div>
+
+                <p
+                    style="text-align: center; max-width: 600px; margin: 2.5rem auto 0; font-size: 1.1rem; font-style: italic; color: rgba(255,255,255,0.75); line-height: 1.8;">
                     <em>A Forest of Greens</em> unearths the psychological and historical layers of nature's primary
-                    palette. This journey follows a deliberate path from the grounded permanence of the forest floor to
-                    the vibrant energy of new life.
+                    palette. This journey follows a deliberate path from the grounded permanence of the forest floor
+                    to the vibrant energy of new life.
                 </p>
 
-                <h2
-                    style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.5rem;">
-                    The Journey</h2>
-
-                <div style="margin-bottom: 1.5rem;">
-                    <h3
-                        style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #fff; margin-bottom: 0.5rem; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">
-                        Stability</h3>
-                    <p style="font-size: 0.95rem; color: rgba(255,255,255,0.9);">
-                        Rooted in <strong>Ancient Strength</strong>, this phase explores the deep, enduring tones that
-                        anchor our visual landscape.
-                    </p>
-                </div>
-
-                <div style="margin-bottom: 1.5rem;">
-                    <h3
-                        style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #fff; margin-bottom: 0.5rem; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">
-                        Harmony</h3>
-                    <p style="font-size: 0.95rem; color: rgba(255,255,255,0.9);">
-                        A study in <strong>Composed Calm</strong>, these restorative mid-tones symbolize the quiet,
-                        organic resilience found in the heart of the woods.
-                    </p>
-                </div>
-
-                <div>
-                    <h3
-                        style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #fff; margin-bottom: 0.5rem; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">
-                        Growth</h3>
-                    <p style="font-size: 0.95rem; color: rgba(255,255,255,0.9);">
-                        Defined by <strong>Vital Expansion</strong>, this final stage captures the high-energy pulse and
-                        forward momentum of a forest in bloom.
-                    </p>
-                </div>
-
-                <div style="margin-top: 5rem; padding-top: 2rem;">
+                <div id="advertising-section" style="margin-top: 5rem; padding-top: 11rem; text-align: center;">
                     <h2
                         style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.6rem; padding-bottom: 0.5rem;">
                         Advertising</h2>
@@ -85,73 +119,98 @@
                         style="font-family: 'Playfair Display', serif; font-size: 1rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; font-weight: 400; font-style: italic; letter-spacing: 0.02em;">
                         What would this site look like with ads?</h3>
                     <p
-                        style="font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; line-height: 1.7;">
+                        style="font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-bottom: 0; line-height: 1.7; max-width: 500px; margin-left: auto; margin-right: auto;">
                         This site exists without interruption by design. A thought experiment in what it might look like
                         if it didn't.
                     </p>
-                    <a href="mockindex.html"
-                        style="display: inline-flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.4); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(255,255,255,0.12); padding: 0.5rem 1.2rem; border-radius: 50px; font-family: 'Inter', sans-serif; transition: all 0.3s ease;">
-                        See it for yourself
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </a>
 
-                    <a href="mockindex.html" class="ad-preview">
-                        <img src="assets/ad-preview.png" alt="Screenshot of the site overwhelmed by ads">
-                    </a>
+                    <div class="about-columns"
+                        style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);">
+                        <!-- Left column: Why not here + When ads work -->
+                        <div class="about-col about-col-left">
+                            <h3
+                                style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 0.75rem; font-weight: 400;">
+                                When ads work</h3>
+                            <p
+                                style="font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 1.2rem;">
+                                Advertising is not inherently wrong. At its best, it connects people to things they
+                                genuinely need, funds work that would otherwise not exist, and can even be its own form
+                                of
+                                craft. A well-placed, contextually relevant ad on a site built around that kind of
+                                exchange,
+                                news, tools, communities, is a fair trade. The problem is not ads. It is the volume, the
+                                irrelevance, and the assumption that a visitor's attention is owed rather than earned.
+                            </p>
+                            <h3
+                                style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 0.75rem; font-weight: 400;">
+                                Why not here</h3>
+                            <p
+                                style="font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 1.2rem;">
+                                This site is built around attention, the slow kind. Each color is meant to be held,
+                                read,
+                                and considered. Advertising operates on the opposite principle: interruption, urgency,
+                                the
+                                engineered feeling that something else is always more important than what you came for.
+                                Placing ads here wouldn't just be aesthetically mismatched. It would undermine the
+                                entire
+                                purpose of the work.
+                            </p>
+                            <p
+                                style="font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 1.2rem;">
+                                There is also something specific about the subject matter. A site exploring the beauty
+                                of
+                                natural color, the depth of forest greens, the calm of moss, the energy of new growth,
+                                would
+                                be particularly diminished by ads that monetize the destruction of those same things.
+                                The
+                                satire writes itself.
+                            </p>
+                            <a href="mockindex.html"
+                                style="display: inline-flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.4); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(255,255,255,0.12); padding: 0.5rem 1.2rem; border-radius: 50px; font-family: 'Inter', sans-serif; transition: all 0.3s ease; margin-top: 1rem;">
+                                See it for yourself
+                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
 
-                    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);">
-                        <h3
-                            style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 0.75rem; font-weight: 400;">
-                            Why not here</h3>
-                        <p
-                            style="font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 1.2rem;">
-                            This site is built around attention, the slow kind. Each color is meant to be held, read,
-                            and considered. Advertising operates on the opposite principle: interruption, urgency, the
-                            engineered feeling that something else is always more important than what you came for.
-                            Placing ads here wouldn't just be aesthetically mismatched. It would undermine the entire
-                            purpose of the work.
-                        </p>
-                        <p
-                            style="font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 1.2rem;">
-                            There is also something specific about the subject matter. A site exploring the beauty of
-                            natural color, the depth of forest greens, the calm of moss, the energy of new growth, would
-                            be particularly diminished by ads that monetize the destruction of those same things. The
-                            satire writes itself.
-                        </p>
-                        <h3
-                            style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 0.75rem; font-weight: 400;">
-                            When ads work</h3>
-                        <p
-                            style="font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 1.2rem;">
-                            Advertising is not inherently wrong. At its best, it connects people to things they
-                            genuinely need, funds work that would otherwise not exist, and can even be its own form of
-                            craft. A well-placed, contextually relevant ad on a site built around that kind of exchange,
-                            news, tools, communities, is a fair trade. The problem is not ads. It is the volume, the
-                            irrelevance, and the assumption that a visitor's attention is owed rather than earned.
-                        </p>
-                        <h3
-                            style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 0.75rem; font-weight: 400;">
-                            Targeting and the illusion of relevance</h3>
-                        <p
-                            style="font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 1.2rem;">
-                            Platforms like Google and Facebook have built their businesses on the idea that a
-                            personalized ad is a better ad. By tracking search history, browsing behavior, location, and
-                            purchases across millions of sites, they build a detailed picture of who you are and what
-                            you might buy next. The ad you see is not random. It is the result of an enormous amount of
-                            data collected, usually without much notice, over a long period of time.
-                        </p>
-                        <p style="font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.8;">
-                            There is something to the argument that a relevant ad is less of an intrusion than an
-                            irrelevant one. Seeing something you were already considering is less jarring than something
-                            you have no use for. But relevance built on surveillance is a different thing from relevance
-                            built on context. A hardware store placing an ad on a home improvement site understands its
-                            audience. An algorithm surfacing the same product because it quietly followed you across the
-                            internet for three weeks is a different kind of knowing, and most people, if they thought
-                            about it, would find it strange.
-                        </p>
+                        <!-- Right column: Targeting + ad preview image -->
+                        <div class="about-col about-col-right">
+                            <h3
+                                style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 0.75rem; font-weight: 400;">
+                                Targeting and the illusion of relevance</h3>
+                            <p
+                                style="font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 1.2rem;">
+                                Platforms like Google and Facebook have built their businesses on the idea that a
+                                personalized ad is a better ad. By tracking search history, browsing behavior, location,
+                                and
+                                purchases across millions of sites, they build a detailed picture of who you are and
+                                what
+                                you might buy next. The ad you see is not random. It is the result of an enormous amount
+                                of
+                                data collected, usually without much notice, over a long period of time.
+                            </p>
+                            <p
+                                style="font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 1.5rem;">
+                                There is something to the argument that a relevant ad is less of an intrusion than an
+                                irrelevant one. Seeing something you were already considering is less jarring than
+                                something
+                                you have no use for. But relevance built on surveillance is a different thing from
+                                relevance
+                                built on context. A hardware store placing an ad on a home improvement site understands
+                                its
+                                audience. An algorithm surfacing the same product because it quietly followed you across
+                                the
+                                internet for three weeks is a different kind of knowing, and most people, if they
+                                thought
+                                about it, would find it strange.
+                            </p>
+
+                            <a href="mockindex.html" class="ad-preview">
+                                <img src="assets/ad-preview.png" alt="Screenshot of the site overwhelmed by ads">
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -168,96 +227,121 @@
                         color: #6fcf7c;
                     }
                 </style>
-                <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.12);">
+                <div id="references-section"
+                    style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid rgba(255,255,255,0.12);">
                     <h2
-                        style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem;">
+                        style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 2rem; padding-bottom: 0.5rem; text-align: center;">
                         References</h2>
-                    <ul style="list-style: disc; padding-left: 1.2rem; margin: 0;">
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://www.mdhistory.org/the-dyes-of-death/" target="_blank" rel="noopener"
-                                class="ref-link">The Dyes of Death</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://www.nationalgallery.org.uk/podcast/colour-stories-green" target="_blank"
-                                rel="noopener" class="ref-link">A History of the Colour Green in Art</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://www.bowers.org/index.php/collections-blog/celadon-and-the-song-a-legacy"
-                                target="_blank" rel="noopener" class="ref-link">Celadon and the Song: A Legacy</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://redblossomtea.com/blogs/red-blossom-blog/song-dynasty-celadon-the-five-great-kilns"
-                                target="_blank" rel="noopener" class="ref-link">Song Dynasty Celadon: The Five Great
-                                Kilns</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://jafedecorating.com/rejuvenating-green-unveiling-the-psychological-impact-of-natures-color/"
-                                target="_blank" rel="noopener" class="ref-link">The Psychological Impact of Nature's
-                                Color</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://americanmedspa.org/blog/understanding-color-psychology-in-health-care-design"
-                                target="_blank" rel="noopener" class="ref-link">Color Psychology in Health Care
-                                Design</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://consumerfed.org/wp-content/uploads/2021/08/6-Is-Contextual-Advertising-Better-margins-General-Format.pdf"
-                                target="_blank" rel="noopener" class="ref-link">Is Contextual Advertising a Better
-                                Alternative?</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://management-datascience.org/articles/3976/" target="_blank" rel="noopener"
-                                class="ref-link">Intrusive Digital Advertising: From Control to Resistance?</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://www.management-poland.com/pdf-197329-120370?filename=The-impact-of-Ad-overload.pdf"
-                                target="_blank" rel="noopener" class="ref-link">The Impact of Ad Overload</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://jpwoodblocks.com/green-ukiyo-e-sustainability-in-the-edo-period/"
-                                target="_blank" rel="noopener" class="ref-link">Green Ukiyo-e: Sustainability in Edo</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://emeralds.com/education/jade-vs-emeralds-culture/" target="_blank"
-                                rel="noopener" class="ref-link">Jade vs. Emeralds: A Cultural Comparison</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=52032" target="_blank"
-                                rel="noopener" class="ref-link">The Rise of Synthetic Colors in Marketing</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://management-datascience.org/articles/3976/" target="_blank" rel="noopener"
-                                class="ref-link">Intrusive Digital Advertising</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://designs.ai/colors/color-meanings/seafoam-green" target="_blank"
-                                rel="noopener" class="ref-link">Seafoam Green Color Guide</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://thecolorhouse.com/olive-green-color-sample/" target="_blank" rel="noopener"
-                                class="ref-link">From Sage to Olive: Exploring Green Paint</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://picsart.com/colors/color-meanings/hunter-green/" target="_blank"
-                                rel="noopener" class="ref-link">The Meaning of Hunter Green</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://www.jacksonsart.com/blog/2023/08/24/sap-green-from-dye-to-mixed-pigment/"
-                                target="_blank" rel="noopener" class="ref-link">Sap Green: From Dye to Mixed Pigment</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://colourlex.com/pigments/pigment-timelines/timeline-green-pigments/"
-                                target="_blank" rel="noopener" class="ref-link">Timeline of Green Pigments</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://ecologyaction.ca/sites/default/files/2024-03/MagazineSpring2024_Green.pdf"
-                                target="_blank" rel="noopener" class="ref-link">Ecology Action: Green</a>
-                        </li>
-                        <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
-                            <a href="https://www.adobe.com/express/colors/forest-green" target="_blank" rel="noopener"
-                                class="ref-link">Forest Green</a>
-                        </li>
-                    </ul>
+                    <div class="about-columns" style="align-items: flex-start;">
+                        <div class="about-col">
+                            <ul style="list-style: disc; padding-left: 1.2rem; margin: 0;">
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://www.mdhistory.org/the-dyes-of-death/" target="_blank"
+                                        rel="noopener" class="ref-link">The Dyes of Death</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://www.nationalgallery.org.uk/podcast/colour-stories-green"
+                                        target="_blank" rel="noopener" class="ref-link">A History of the Colour Green in
+                                        Art</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://www.bowers.org/index.php/collections-blog/celadon-and-the-song-a-legacy"
+                                        target="_blank" rel="noopener" class="ref-link">Celadon and the Song: A
+                                        Legacy</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://redblossomtea.com/blogs/red-blossom-blog/song-dynasty-celadon-the-five-great-kilns"
+                                        target="_blank" rel="noopener" class="ref-link">Song Dynasty Celadon: The Five
+                                        Great Kilns</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://jafedecorating.com/rejuvenating-green-unveiling-the-psychological-impact-of-natures-color/"
+                                        target="_blank" rel="noopener" class="ref-link">The Psychological Impact of
+                                        Nature's Color</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://americanmedspa.org/blog/understanding-color-psychology-in-health-care-design"
+                                        target="_blank" rel="noopener" class="ref-link">Color Psychology in Health Care
+                                        Design</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://consumerfed.org/wp-content/uploads/2021/08/6-Is-Contextual-Advertising-Better-margins-General-Format.pdf"
+                                        target="_blank" rel="noopener" class="ref-link">Is Contextual Advertising a
+                                        Better Alternative?</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://management-datascience.org/articles/3976/" target="_blank"
+                                        rel="noopener" class="ref-link">Intrusive Digital Advertising: From Control to
+                                        Resistance?</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://www.management-poland.com/pdf-197329-120370?filename=The-impact-of-Ad-overload.pdf"
+                                        target="_blank" rel="noopener" class="ref-link">The Impact of Ad Overload</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://emeralds.com/education/jade-vs-emeralds-culture/" target="_blank"
+                                        rel="noopener" class="ref-link">Jade vs. Emeralds: A Cultural Comparison</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="about-col about-col-right">
+                            <ul style="list-style: disc; padding-left: 1.2rem; margin: 0;">
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://jpwoodblocks.com/green-ukiyo-e-sustainability-in-the-edo-period/"
+                                        target="_blank" rel="noopener" class="ref-link">Green Ukiyo-e: Sustainability in
+                                        Edo</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=52032" target="_blank"
+                                        rel="noopener" class="ref-link">The Rise of Synthetic Colors in Marketing</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://management-datascience.org/articles/3976/" target="_blank"
+                                        rel="noopener" class="ref-link">Intrusive Digital Advertising</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://designs.ai/colors/color-meanings/seafoam-green" target="_blank"
+                                        rel="noopener" class="ref-link">Seafoam Green Color Guide</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://thecolorhouse.com/olive-green-color-sample/" target="_blank"
+                                        rel="noopener" class="ref-link">From Sage to Olive: Exploring Green Paint</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://picsart.com/colors/color-meanings/hunter-green/" target="_blank"
+                                        rel="noopener" class="ref-link">The Meaning of Hunter Green</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://www.jacksonsart.com/blog/2023/08/24/sap-green-from-dye-to-mixed-pigment/"
+                                        target="_blank" rel="noopener" class="ref-link">Sap Green: From Dye to Mixed
+                                        Pigment</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://colourlex.com/pigments/pigment-timelines/timeline-green-pigments/"
+                                        target="_blank" rel="noopener" class="ref-link">Timeline of Green Pigments</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://ecologyaction.ca/sites/default/files/2024-03/MagazineSpring2024_Green.pdf"
+                                        target="_blank" rel="noopener" class="ref-link">Ecology Action: Green</a>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.4);">
+                                    <a href="https://www.adobe.com/express/colors/forest-green" target="_blank"
+                                        rel="noopener" class="ref-link">Forest Green</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);">
+                    <a href="#" onclick="this.closest('.about-page').scrollTop=0;return false;" class="jump-nav-link">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" style="transform: rotate(-90deg);">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                        Back to Top
+                    </a>
                 </div>
             </div>
         </div>

@@ -3,10 +3,101 @@
 
 .about-page {
   overflow-y: auto;
+  overflow-x: hidden;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 72px;
+  padding-top: 0;
   padding-bottom: 60px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+}
+
+/* Sticky jump-to nav */
+.about-jump-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+}
+
+.jump-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.4rem 1.1rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.jump-nav-link:hover {
+  color: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Offset anchors so sticky nav doesn't cover headings */
+#advertising-section,
+#references-section {
+  scroll-margin-top: 60px;
+}
+
+/* Wider containers scoped to about page only */
+.about-page .landing-content {
+  max-width: min(1100px, 90vw);
+  padding-top: 2rem;
+  box-sizing: border-box;
+}
+
+.about-page .landing-intro {
+  max-width: 100%;
+}
+
+/* Two-column intro layout */
+.about-columns {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.about-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.about-col-right {
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 3rem;
+}
+
+@media (max-width: 767px) {
+  .about-columns {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-col-right {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 2rem;
+  }
 }
 
 .ad-preview {

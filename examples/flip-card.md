@@ -144,4 +144,6 @@ The color pages build on this with a few extras:
 | Demo card CSS   | `css/design.css`                             |
 | Flip JS         | `script.js`                                  |
 
+---
+
 ## ENJOY!
